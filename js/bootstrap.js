@@ -21,7 +21,7 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
     	return { redirectUrl: details.url.replace(/.*:\/\/www.bing.com\/search/, "http://www.ask.com/web")};
     }
     if(storageChange=="Yahoo.com"){
-    	return { redirectUrl: details.url.replace("www.bing.com/search", "search.yahoo.com/search?p")};
+    	return { redirectUrl: details.url.replace("www.bing.com/search?q", "search.yahoo.com/search?p")};
     }
     if(storageChange=="Aol.com"){
     	return { redirectUrl: details.url.replace(/.*:\/\/www.bing.com\/search/, "http://search.aol.com/aol/search")};
