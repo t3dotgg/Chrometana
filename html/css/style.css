@@ -37,3 +37,24 @@
 	font-size: 40px;
 	color: #1c9fe7;
 }
+#subtitle {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 8vh;
+    width: 100%;
+	text-align: center;
+	font-family: wf_segoe-ui,Tahoma,Verdana,Arial,sans-serif;
+	font-size: 25px;
+	color: #1c9fe7;
+}
+#selector {
+	text-align: center;
+	height: 100%;
+}
+#selectorimage {
+	max-height:100%;
+	max-width:100%;
+}
+#engines {
+	height: 25vh;
+}

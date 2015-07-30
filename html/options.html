@@ -19,22 +19,24 @@
 		<div id="title">
 			Chrometana
 		</div>
-		Choose a search engine:
-		<select id="search_engine">
- 			<option value="Google.com">Google</option>
- 			<option value="DuckDuckGo.com">DuckDuckGo</option>
- 			<option value="Ask.com">Ask</option>
- 			<option value="Aol.com">Aol</option>
- 			<option value="Wow.com">Wow</option>
- 			<option value="Yahoo.com">Yahoo</option>
-		</select>
+		<div id="subtitle">
+			Pick your preferred search engine from below
+		</div>
 
 		<div id="status"></div>
-		<button id="save">Save</button>
-
-		<div id="selector" value="Google.com">Google</div>
-		<div id="selector" value="Yahoo.com">Yahoo</div>
-		<div id="selector" value="DuckDuckGo.com">DuckDuckGo</div>
+		<div class="container">
+			<div class="row" id="engines">
+				<div class="col-md-4" id="selector" value="Google.com">
+					<img src="../images/search_eng_images/google.png" id="selectorimage"/>
+				</div>
+				<div class="col-md-4" id="selector" value="DuckDuckGo.com">
+					<img src="../images/search_eng_images/duckduckgo.png" id="selectorimage"/>
+				</div>
+				<div class="col-md-4" id="selector" value="Yahoo.com">
+					<img src="../images/search_eng_images/yahoo.png" id="selectorimage"/>
+				</div>
+			</div>
+		</div>
 		<script src="../js/options.js"></script>
 	</body>
 </html>
