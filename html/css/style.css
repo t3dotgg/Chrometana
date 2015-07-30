@@ -47,14 +47,24 @@
 	font-size: 25px;
 	color: #1c9fe7;
 }
-#selector {
+.selector {
 	text-align: center;
 	height: 100%;
 }
-#selectorimage {
+
+.selectorimage {
 	max-height:100%;
 	max-width:100%;
 }
+
+.selected {
+    position: relative;
+    z-index: 100;
+    border-color: #9adaf6;
+    border-width: 5px;
+    border-style: solid;
+}
+
 #engines {
 	height: 25vh;
 }
