@@ -35,7 +35,7 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
 // Redirect to welcome.html on install
 chrome.runtime.onInstalled.addListener(function(details){
     if(details.reason == "install"){
-        chrome.tabs.create({url: "html/welcome.html"});
+        chrome.tabs.create({url: "html/options.html"});
     }else if(details.reason == "update"){
         var thisVersion = chrome.runtime.getManifest().version;
         console.log("Updated from " + details.previousVersion + " to " + thisVersion + "!");
