@@ -10,6 +10,8 @@ With the introduction of Windows 10 to the general public, Bing use is growing r
 
 VERSION
 ------------
+####v1.0.1
+Actually removed welcome.html
 
 ####v1.0
 Three search engines are supported, those being Google, Yahoo, and DuckDuckGo.
