@@ -3,13 +3,6 @@ function save_options(element, value) {
   chrome.storage.sync.set({
     search_engine: search_engine
   }, function() {
-    // Update status to let user know options were saved.
-    var status = document.getElementById('status');
-    status.textContent = 'Options saved.';
-    setTimeout(function() {
-      status.textContent = '';
-    }, 750);
-
     for (i = 0; i <  selectorList.length; i++) {
       removeClass(selectorList[i], 'selected');
     }
