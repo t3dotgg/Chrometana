@@ -1,12 +1,33 @@
-chrome.webRequest.onBeforeRequest.addListener(function(details) {
-	search_engine = chrome.storage.sync.get('search_engine', function (obj) {
+var storageChange="Google.com"
+chrome.storage.sync.get('search_engine', function (obj) {
         console.log('myKey', obj);
-    });
-    if(search_engine=="google"){
+        storageChange=obj['search_engine']
+});
+
+chrome.storage.onChanged.addListener(function(changes, namespace) {  
+    storageChange = changes['search_engine']['newValue'];
+    console.log(storageChange)
+});
+
+chrome.webRequest.onBeforeRequest.addListener(function(details) {
+   	console.log(storageChange)
+    if(storageChange=="Google.com"){
     	return { redirectUrl: details.url.replace("www.bing.com/search", "www.google.com/search")};
     }
-    if(search_engine=="ddg"){
-    	return { redirectUrl: details.url.replace("www.bing.com/search", "www.duckduckgo.com/search")};
+    if(storageChange=="DuckDuckGo.com"){
+    	return { redirectUrl: details.url.replace("www.bing.com/search", "www.duckduckgo.com")};
+    }
+    if(storageChange=="Ask.com"){
+    	return { redirectUrl: details.url.replace(/.*:\/\/www.bing.com\/search/, "http://www.ask.com/web")};
+    }
+    if(storageChange=="Yahoo.com"){
+    	return { redirectUrl: details.url.replace("www.bing.com/search", "search.yahoo.com/search?p")};
+    }
+    if(storageChange=="Aol.com"){
+    	return { redirectUrl: details.url.replace(/.*:\/\/www.bing.com\/search/, "http://search.aol.com/aol/search")};
+    }
+    if(storageChange=="Wow.com"){
+    	return { redirectUrl: details.url.replace(/.*:\/\/www.bing.com/, "http://us.wow.com")};
     }
     return { redirectUrl: details.url.replace("www.bing.com/search", "www.google.com/search")};
 }, {urls: ["*://www.bing.com/search*"]}, ["blocking"]);
