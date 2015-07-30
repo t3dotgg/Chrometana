@@ -1,6 +1,7 @@
 Chrometana
 ==============
-A Windows 10 Reaction
+A Windows 10 Reaction project written in 4 hours
+
 [Link to alpha on Chrome Web Store](https://chrome.google.com/webstore/detail/kaicbfmipfpfpjmlbpejaoaflfdnabnc/publish-accepted)
 
 INTRODUCTION
