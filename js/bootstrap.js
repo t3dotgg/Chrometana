@@ -1,4 +1,13 @@
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
+	search_engine = chrome.storage.sync.get('search_engine', function (obj) {
+        console.log('myKey', obj);
+    });
+    if(search_engine=="google"){
+    	return { redirectUrl: details.url.replace("www.bing.com/search", "www.google.com/search")};
+    }
+    if(search_engine=="ddg"){
+    	return { redirectUrl: details.url.replace("www.bing.com/search", "www.duckduckgo.com/search")};
+    }
     return { redirectUrl: details.url.replace("www.bing.com/search", "www.google.com/search")};
 }, {urls: ["*://www.bing.com/search*"]}, ["blocking"]);
 
