@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "Chrometana",
+  "description": "Because Cortana - Bing = Nirvana",
+  "version": "0.1.0",
+
+  "permissions": [
+        "*://www.bing.com/",
+        "webRequest",
+        "webRequestBlocking"
+  ],
+  "background": {
+    "scripts": ["js/bootstrap.js"]
+  },
+  "page_action": {
+    "default_title": "Chrometana"
+  }
+
+}
