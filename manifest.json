@@ -14,7 +14,8 @@
         "background"
   ],
   "background": {
-    "scripts": ["js/bootstrap.js"]
+    "scripts": ["js/bootstrap.js"],
+    "persistent": false
   }, 
   "icons": {
     "32": "images/logo-32.png",
