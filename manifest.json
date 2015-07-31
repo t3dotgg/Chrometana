@@ -3,14 +3,15 @@
 
   "name": "Chrometana",
   "description": "Redirect all Bing (and therefore Cortana) serches to a search engine of your choice!",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "options_page": "html/options.html",
   "permissions": [
         "*://www.bing.com/",
         "webRequest",
         "webRequestBlocking",
-        "storage"
+        "storage",
+        "background"
   ],
   "background": {
     "scripts": ["js/bootstrap.js"]
