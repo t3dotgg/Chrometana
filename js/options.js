@@ -7,6 +7,11 @@ function save_options(element, value) {
       removeClass(selectorList[i], 'selected');
     }
     addClass(element, 'selected');
+    var status = document.getElementById('status');
+    status.textContent = 'New search engine preferences saved.';
+    setTimeout(function() {
+      status.textContent = '';
+    }, 750);
   });
 
 }
@@ -27,9 +32,26 @@ function restore_options() {
   });
 }
 
+//Parses arguments from URL
+function getURLVariable(variable){
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
+  }
+  return(false);
+}
+
 var selectorList = document.getElementsByClassName('selector');
 
 document.addEventListener('DOMContentLoaded', restore_options);
+
+if (getURLVariable("newinstall") == "yes"){
+  var installadvice = document.getElementById('installadvice');
+  installadvice.textContent = 'To come back to this page at any time, go to Chrome Settings, open Extensions, and click Options underneath Chrometana';
+}
+
 
 for (i = 0; i <  selectorList.length; i++) {
   selectorList[i].addEventListener('click', function() {

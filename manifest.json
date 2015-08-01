@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Chrometana",
-  "description": "Redirect all Bing (and therefore Cortana) serches to a search engine of your choice!",
+  "description": "Redirect all Bing (and therefore Cortana) searches to a search engine of your choice!",
   "version": "1.0.2",
 
   "options_page": "html/options.html",
