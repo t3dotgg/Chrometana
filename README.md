@@ -2,9 +2,9 @@ Chrometana
 ==============
 ![Logo](images/logo-128.png)
 
-A Windows 10 Reaction project written in 4 hours
-
 [Link to install on Chrome Web Store](https://chrome.google.com/webstore/detail/kaicbfmipfpfpjmlbpejaoaflfdnabnc)
+
+[Link to the Chrometana blog](http://Chrometana.Theo.li)
 
 INTRODUCTION
 ------------
