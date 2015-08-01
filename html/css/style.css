@@ -55,8 +55,8 @@
 .selector {
 	text-align: center;
 	height: 100%;
-    -moz-border-radius: 60px; 
-    border-radius: 60px; /* standards-compliant: (IE) */ 
+    -moz-border-radius: 40px; 
+    border-radius: 40px; /* standards-compliant: (IE) */ 
 }
 
 .selectorimage {
@@ -64,8 +64,8 @@
 	max-height:100%;
 	max-width:100%;
     vertical-align: middle;
-    -moz-border-radius: 60px; 
-    border-radius: 60px; /* standards-compliant: (IE) */ 
+    -moz-border-radius: 40px; 
+    border-radius: 40px; /* standards-compliant: (IE) */ 
 }
 
 .selected {
