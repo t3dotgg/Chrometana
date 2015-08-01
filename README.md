@@ -12,8 +12,11 @@ With the introduction of Windows 10 to the general public, Bing use is growing r
 
 VERSION
 ------------
+####v1.1
+Major UI overhaul
+
 ####v1.0.2
-Potential fix for background running issues
+Fix for background running issues
 
 ####v1.0.1
 Actually removed welcome.html
