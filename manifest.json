@@ -12,7 +12,8 @@
         "webRequest",
         "webRequestBlocking",
         "storage",
-        "background"
+        "background",
+        "tabs"
   ],
   "background": {
     "scripts": ["js/bootstrap.js"]
