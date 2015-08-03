@@ -12,17 +12,22 @@ With the introduction of Windows 10 to the general public, Bing use is growing r
 
 VERSION
 ------------
+####v1.1.1
+ - Moved from redirects to URL replacement and reload added by [kyleadd](https://github.com/kyleladd)
+
+ - Moved UI assets out of package to lower size. Options.html assets now load off of Chrometana.theo.li
+
 ####v1.1.0
-Major UI overhaul
+ - Major UI overhaul
 
 ####v1.0.2
-Fix for background running issues
+ - Fix for background running issues
 
 ####v1.0.1
-Actually removed welcome.html
+ - Actually removed welcome.html
 
 ####v1.0.0
-Three search engines are supported, those being Google, Yahoo, and DuckDuckGo.
+ - Three search engines are supported, those being Google, Yahoo, and DuckDuckGo.
 
 INSTALLATION
 ------------
