@@ -1,6 +1,6 @@
 Chrometana
 ==============
-![Logo](images/logo-128.png)
+![Logo](Chrometana/images/logo-128.png)
 
 [Link to install on Chrome Web Store](https://chrome.google.com/webstore/detail/kaicbfmipfpfpjmlbpejaoaflfdnabnc)
 
