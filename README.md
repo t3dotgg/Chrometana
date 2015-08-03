@@ -39,4 +39,4 @@ INSTALLATION
 
 CREDITS
 ------------
-Developed by Theo Browne, Claire Pitman, and Maayan Kline
+Developed by [Theo Browne](http://www.theo.li), [Claire Pitman](https://github.com/ClairePitman), and [Maayan Kline](https://github.com/mok8)
