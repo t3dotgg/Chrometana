@@ -12,6 +12,9 @@ With the introduction of Windows 10 to the general public, Bing use is growing r
 
 VERSION
 ------------
+####v1.2.0
+ - Added "Go to (website)" functionality, you can now tell Cortana to go to any website you want
+
 ####v1.1.1
  - Moved from redirects to URL replacement and reload added by [kyleadd](https://github.com/kyleladd)
 

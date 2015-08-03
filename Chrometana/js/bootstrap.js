@@ -1,5 +1,8 @@
 var storageChange="Google.com";
 function convertURL(url){
+    if(url.search("search?q=go%20to%20")){
+        return "http://" + url.substring(url.search('=')+11, url.search('&'));
+    }
     if(storageChange=="Google.com"){
         return url.replace("www.bing.com/search", "www.google.com/search");
     }
