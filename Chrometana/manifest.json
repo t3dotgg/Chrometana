@@ -12,12 +12,15 @@
         "webRequest",
         "webRequestBlocking",
         "storage",
-        "background",
-        "tabs"
+        "background"
   ],
   "background": {
     "scripts": ["js/bootstrap.js"]
   }, 
+  "content_scripts": [ {
+    "matches": ["*://www.bing.com/search*"],
+    "js": ["js/redirect.js"]
+  }],
   "icons": {
     "32": "images/logo-32.png",
     "64": "images/logo-64.png",
