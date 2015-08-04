@@ -15,6 +15,9 @@ VERSION
 ####v1.2.0
  - Added "Go to (website)" functionality, you can now tell Cortana to go to any website you want
 
+####v1.1.2
+ - The url replacement has been removed and replaced in favor of a redirect fall-back script by [kyleadd](https://github.com/kyleladd). No more tab permissions!
+
 ####v1.1.1
  - Moved from redirects to URL replacement and reload added by [kyleadd](https://github.com/kyleladd)
 
