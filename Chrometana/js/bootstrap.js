@@ -45,17 +45,11 @@ chrome.runtime.onInstalled.addListener(function(details){
         console.log("Updated from " + details.previousVersion + " to " + thisVersion + "!");
     }
 });
-// Call the above function when the url of a tab changes.
-chrome.tabs.onUpdated.addListener(startUpRedirect);
-
-// Show page action icon in omnibar.
-function startUpRedirect( tabId, changeInfo, tab ) {
-    console.log(tab);
-    var pattern = /www.bing.com\/search+/gi;
-    if(tab['url'].match(pattern)){
-        chrome.tabs.getSelected(null, function(tab){
-            chrome.tabs.update(tab.id, {url: convertURL(tab.url)});
-        });
+// Fallback when Chrome is not already running
+chrome.runtime.onMessage.addListener(onMessage);
+function onMessage(request, sender, callback) {
+    if (request.action == "convertURL") {
+        callback(convertURL(request.url));
     }
-    
-};
+    return true;
+}
