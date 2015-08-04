@@ -12,6 +12,9 @@ With the introduction of Windows 10 to the general public, Bing use is growing r
 
 VERSION
 ------------
+####v1.1.2
+ - The url replacement has been removed and replaced in favor of a redirect fall-back script by [kyleadd](https://github.com/kyleladd). No more tab permissions!
+
 ####v1.1.1
  - Moved from redirects to URL replacement and reload added by [kyleadd](https://github.com/kyleladd)
 
