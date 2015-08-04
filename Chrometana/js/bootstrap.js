@@ -1,5 +1,6 @@
 var storageChange="Google.com";
 function convertURL(url){
+    //\?q\=([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*)($|(\&))
     if(url.search("search?q=go%20to%20")){
         return "http://" + url.substring(url.search('=')+11, url.search('&'));
     }
