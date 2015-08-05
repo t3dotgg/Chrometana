@@ -6,7 +6,7 @@ function convertURL(url){
     console.log(url)
     console.log(uri)
 
-    var match = /^((go\+to\+)|(open\+))([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*\.[a-z]+)/i.exec(uri)
+    var match = /^((go\+to\+)|(open\+)|())([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*\.[a-z]+)/i.exec(uri)
     console.log(match)
     if(match){
         return "http://" + match[4]
