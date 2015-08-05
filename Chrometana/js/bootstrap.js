@@ -9,7 +9,7 @@ function convertURL(url){
     var match = /^((go\+to\+)|(open\+)|())([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*\.[a-z]+)/i.exec(uri)
     console.log(match)
     if(match){
-        return "http://" + match[4]
+        return "http://" + match[5]
     }
     if(url.search("search?q=go%20to%20")!=-1){
         return "http://" + url.substring(url.search('=')+11, url.search('&'));
