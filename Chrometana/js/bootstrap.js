@@ -1,7 +1,17 @@
 var storageChange="Google.com";
 function convertURL(url){
-    //\?q\=([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*)($|(\&))
-    if(url.search("search?q=go%20to%20")){
+    console.log(url)
+    url = url.replace(/%20/g,"+")
+    var uri = /\?q\=([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*)($|(\&))/.exec(url)[1]
+    console.log(url)
+    console.log(uri)
+
+    var match = /^((go\+to\+)|(open\+up\+))([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*\.[a-z]+)/.exec(uri)
+    console.log(match)
+    if(match){
+        return "http://" + match[4]
+    }
+    if(url.search("search?q=go%20to%20")!=-1){
         return "http://" + url.substring(url.search('=')+11, url.search('&'));
     }
     if(storageChange=="Google.com"){
