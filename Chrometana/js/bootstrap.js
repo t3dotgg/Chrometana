@@ -15,32 +15,32 @@ function convertURL(url){
         return "http://" + url.substring(url.search('=')+11, url.search('&'));
     }
     if(storageChange=="Google.com"){
-        return url.replace("www.bing.com/search", "www.google.com/search");
+        return "https://www.google.com/search?q=" + uri;
     }
     if(storageChange=="DuckDuckGo.com"){
-        return url.replace("www.bing.com/search", "www.duckduckgo.com");
-    }
-    if(storageChange=="Ask.com"){
-        return url.replace(/.*:\/\/www.bing.com\/search/, "http://www.ask.com/web");
+        return "https://www.duckduckgo.com?q=" + uri;
     }
     if(storageChange=="Yahoo.com"){
-        return url.replace("www.bing.com/search?q", "search.yahoo.com/search?p");
+        return "https://search.yahoo.com/search?p=" + uri;
     }
-    if(storageChange=="Aol.com"){
-        return url.replace(/.*:\/\/www.bing.com\/search/, "http://search.aol.com/aol/search");
-    }
-    if(storageChange=="Wow.com"){
-        return url.replace(/.*:\/\/www.bing.com/, "http://us.wow.com");
+    if(storageChange=="Custom"){
+        return custom_engine + uri
     }
     return url.replace("www.bing.com/search", "www.google.com/search");
 }
 chrome.storage.sync.get('search_engine', function (obj) {
-        console.log('myKey', obj);
-        storageChange=obj['search_engine'];
+    console.log('myKey', obj);
+    if(storageChange == "Custom"){
+        custom_engine = changes['custom_engine']['newValue']
+    }
+    storageChange=obj['search_engine'];
 });
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {  
     storageChange = changes['search_engine']['newValue'];
+    if(storageChange == "Custom"){
+        custom_engine = changes['custom_engine']['newValue']
+    }
     console.log(storageChange);
 });
 
