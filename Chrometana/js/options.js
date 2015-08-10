@@ -63,6 +63,15 @@ for (i = 0; i <  selectorList.length; i++) {
   });
 }
 
+document.getElementById('custom_engine_update').addEventListener('click', function() {
+  handleUpdateEngine(document.getElementById('custom_engine'));
+})
+
+function handleUpdateEngine(element) {
+  engine = element.value
+  //Insert code here to update engine
+}
+
 function addClass(element, classNameToAdd) {
   if (!element.className.includes(classNameToAdd)) {
     element.className = element.className + ' ' + classNameToAdd;
