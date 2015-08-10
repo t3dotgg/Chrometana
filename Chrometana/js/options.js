@@ -1,17 +1,21 @@
-function save_options(element, value) {
-  var search_engine = value
-  chrome.storage.sync.set({
-    search_engine: search_engine
-  }, function() {
+// +element+: html::element; Page element
+// +location+: string; The name of the key to save under
+// +value+: string; The value to save under the given key
+// save_options is a function that takes in an html element, location string, and value string
+// to save the value to the location
+function save_options(element, location, value) {
+  var save = {}
+  save[location] = value
+  chrome.storage.sync.set(save, function() {
     for (i = 0; i <  selectorList.length; i++) {
       removeClass(selectorList[i], 'selected');
     }
     addClass(element, 'selected');
     var status = document.getElementById('status');
-    status.textContent = 'New search engine preferences saved.';
+    status.textContent = 'New preferences saved.';
     setTimeout(function() {
       status.textContent = '';
-    }, 750);
+    }, 1250);
   });
 
 }
@@ -55,7 +59,7 @@ if (getURLVariable("newinstall") == "yes"){
 
 for (i = 0; i <  selectorList.length; i++) {
   selectorList[i].addEventListener('click', function() {
-    save_options(this, this.getAttribute('value'))
+    save_options(this, 'search_engine', this.getAttribute('value'))
   });
 }
 
