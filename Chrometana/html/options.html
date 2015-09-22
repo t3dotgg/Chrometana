@@ -14,6 +14,7 @@
 		<div class="content">
     		<div class="fixed-top-right"><a href="http://Chrometana.theo.li">Check out our blog!</a></div>
     		<img  class="centerlogo" src="http://chrometana.theo.li/wp-content/uploads/2015/08/logo-minimal-600.png"/>
+
 			<div class="title">
 				Chrometana
 				<div class="subtitle">
@@ -22,36 +23,45 @@
 			</div>
 		</div>
 
-		<div id="status"></div>
+		<div id="status">New search engine preferences saved</div>
+		<div id="installadvice">To come back to this page at any time, go to Chrome Settings, open Extensions, and click Options underneath Chrometana</div>
 		<div class="container">
 			<div class="row engines">
-				<div class="col-md-4 selector" value="Google.com">
+				<div class="col-md-4 selector" value="Google.com" data-icon-class="google-webpage">
 					<div>
 						<img class="selectorimage" src="http://chrometana.theo.li/wp-content/uploads/2015/08/google.png"/>
 					</div>
 				</div>
-				<div class="col-md-4 selector" value="DuckDuckGo.com">
+				<div class="col-md-4 selector" value="DuckDuckGo.com" data-icon-class="duckduckgo-webpage">
 					<div>
 						<img class="selectorimage" src="http://chrometana.theo.li/wp-content/uploads/2015/08/duckDuckGo.png"/>
 					</div>
 				</div>
-				<div class="col-md-4 selector" value="Yahoo.com">
+				<div class="col-md-4 selector" value="Yahoo.com" data-icon-class="yahoo-webpage">
 					<div>
 						<img class="selectorimage" src="http://chrometana.theo.li/wp-content/uploads/2015/08/yahoo.png"/>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="installadvice"></div>
+		<div class="container">
+			<div class="diagram" id="expandable_settings_pane">
+				<div id="webpage_diagram">
+					<div id="webpage_diagram_placeholder"></div>
+				</div>
+				<div id="settings_container">
+					<form>
+						<h3>Enable</h3>
+						<div class="form-group container"><input type="checkbox" id="enable_open_website" /><label for="enable_open_website">Enable "Open Website"</label><br /></div>
+						<h3>Custom Search Engine</h3>
+						<div class="form-group"><label for="custom_engine">Custom Search Engine</label><input id="custom_engine" class="form-control" placeholder="https://"> <button class="btn btn-default" id="custom_engine_update">Update</button></div>
+					</form>
+				</div>
+			</div>
+		</div>
 		<div class="container">
 			<input type="checkbox" class="toggle" id="additional-settings-toggle" />
 			<label class="settings-btn btn" for="additional-settings-toggle">Additional Settings</label>
-			<div class="expandable" id="additional_settings_container">
-				<form>
-					<div class="form-group"><input type="checkbox" id="enable_open_website" /><label for="enable_open_website">Enable "Open Website"</label><br /></div>
-					<div class="form-group"><label for="custom_engine">Custom Search Engine</label><input id="custom_engine" class="form-control" placeholder="https://"> <button class="btn btn-default" id="custom_engine_update">Update</button></div>
-				</form>
-			</div>
 
 		</div>
 		<script src="../js/options.js"></script>

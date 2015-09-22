@@ -11,10 +11,11 @@ function save_options(element, location, value) {
       removeClass(selectorList[i], 'selected');
     }
     addClass(element, 'selected');
+    document.getElementById("webpage_diagram_placeholder").className = element.getAttribute("data-icon-class");
     var status = document.getElementById('status');
-    status.textContent = 'New preferences saved.';
+    addClass(status, 'updated');
     setTimeout(function() {
-      status.textContent = '';
+      removeClass(status, 'updated');
     }, 1250);
   });
 
@@ -29,6 +30,7 @@ function restore_options() {
     for (i = 0; i <  selectorList.length; i++) {
       if (selectorList[i].getAttribute('value') == items.search_engine) {
         addClass(selectorList[i], 'selected');
+        document.getElementById("webpage_diagram_placeholder").className = selectorList[i].getAttribute("data-icon-class");
       } else {
         removeClass(selectorList[i], 'selected');
       }
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', restore_options);
 
 if (getURLVariable("newinstall") == "yes"){
   var installadvice = document.getElementById('installadvice');
-  installadvice.textContent = 'To come back to this page at any time, go to Chrome Settings, open Extensions, and click Options underneath Chrometana';
+  addClass(installadvice, 'visible');
 }
 
 
@@ -61,11 +63,39 @@ for (i = 0; i <  selectorList.length; i++) {
   selectorList[i].addEventListener('click', function() {
     save_options(this, 'search_engine', this.getAttribute('value'))
   });
+  selectorList[i].addEventListener('mouseover', function() {
+    handleMouseover(this);
+  });
+  selectorList[i].addEventListener('mouseleave', function() {
+    //handleMouseout(this);
+  })
 }
 
 document.getElementById('custom_engine_update').addEventListener('click', function() {
   handleUpdateEngine(document.getElementById('custom_engine'));
 })
+
+document.getElementById('additional-settings-toggle').addEventListener('click', function() {
+  var settingsPane = document.getElementById('expandable_settings_pane');
+  if (settingsPane.className.search('open') >= 0) {
+    removeClass(settingsPane, 'open');
+  } else {
+    addClass(settingsPane, 'open');
+  }
+})
+
+function handleMouseover(element) {
+  selectedElements = document.getElementsByClassName('selected');
+  for (i = 0; i <  selectedElements.length; i++) {
+    removeClass(selectedElements[i], 'selected');
+  }
+  addClass(element, 'selected');
+}
+
+function handleMouseout(element) {
+  removeClass(element, 'selected');
+  restore_options();
+}
 
 function handleUpdateEngine(element) {
   engine = element.value
@@ -79,6 +109,10 @@ function addClass(element, classNameToAdd) {
 }
 
 
-function removeClass(element, classNameToAdd) {
-  element.className = element.className.replace(classNameToAdd, '');
+function removeClass(element, classNameToRemove) {
+  if(element.className.search(' ' + classNameToRemove)) {
+    element.className = element.className.replace(' ' + classNameToRemove, '');
+  } else {
+    element.className = element.className.replace(classNameToRemove, '');
+  }
 }
