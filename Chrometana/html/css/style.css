@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     height: 40vh;
-	text-align: center;
+    text-align: center;
     background-color: #80CFE8;
     padding-bottom: 20px;
 }
@@ -11,38 +11,38 @@
     top: 0px;
     right: 0px;
     max-width:100%;
-	max-height:70%;
+    max-height:70%;
     padding: 8px;
     background-color: #03689d;
     color: #80CFE8;
     border-bottom-left-radius: 10px; /* standards-compliant: (IE) */ 
 }
 .centerlogo {
-	padding-top: 20px;
-	max-height: 65%;
+    padding-top: 20px;
+    max-height: 65%;
 }
 .title {
     position: relative;
     padding-top: 10px;
     width: 100%;
     height: 30%;
-	text-align: center;
-	font-family: wf_segoe-ui,Tahoma,Verdana,Arial,sans-serif;
-	font-size: 40px;
-	color: #03689d;
+    text-align: center;
+    font-family: wf_segoe-ui,Tahoma,Verdana,Arial,sans-serif;
+    font-size: 40px;
+    color: #03689d;
     background-color: #80CFE8;
 }
 .subtitle {
     position: relative;
     padding-top: 10px;
     width: 100%;
-	text-align: center;
-	font-size: 25px;
+    text-align: center;
+    font-size: 25px;
 }
 
 .selector div {
-	text-align: center;
-	height: 100%;
+    text-align: center;
+    height: 100%;
     border-radius: 40px; /* standards-compliant: (IE) */ 
 }
 
@@ -54,8 +54,8 @@
 
 .selectorimage {
     padding: 10px;
-	max-height:100%;
-	max-width:100%;
+    max-height:200px;
+    max-width:100%;
     vertical-align: middle;
     border-radius: 40px; /* standards-compliant: (IE) */ 
 }
@@ -109,10 +109,6 @@
     color: #03689d;
     padding: 5vh 0;
     margin-bottom: 40px;
-}
-
-.engines {
-	height: 25vh;
 }
 
 /*JS-free CSS3 transition voodoo magic*/
