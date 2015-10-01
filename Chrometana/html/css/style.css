@@ -6,14 +6,8 @@ body {
 .content {
     position: relative;
     width: 100%;
-/*<<<<<<< HEAD*/
     height: 250px;
 	text-align: center;
-/*=======
-    height: 40vh;
-    text-align: center;
-    background-color: #80CFE8;
->>>>>>> Custom Search Engine*/
     padding-bottom: 20px;
 }
 .fixed-top-right {
@@ -28,32 +22,21 @@ body {
     border-bottom-left-radius: 10px; /* standards-compliant: (IE) */ 
 }
 .centerlogo {
-/*<<<<<<< HEAD*/
 	padding-top: 20px;
 	max-height: 45%;
-/*=======
-    padding-top: 20px;
-    max-height: 65%;
->>>>>>> Custom Search Engine*/
+    display: inline-block;
 }
 
 .title {
     position: relative;
+    display: inline-block;
     padding-top: 10px;
     width: 100%;
     height: 30%;
-/*<<<<<<< HEAD*/
 	text-align: center;
 	font-family: wf_segoe-ui,Tahoma,Verdana,Arial,sans-serif;
 	font-size: 40px;
 	color: #B1DDEA;
-/*=======
-    text-align: center;
-    font-family: wf_segoe-ui,Tahoma,Verdana,Arial,sans-serif;
-    font-size: 40px;
-    color: #03689d;
-    background-color: #80CFE8;
->>>>>>> Custom Search Engine*/
 }
 
 .subtitle {
@@ -66,7 +49,7 @@ body {
 
 .diagram {
     flex-direction: column;
-    height: 300px;
+    height: 250px;
 }
 
 .diagram > div {
@@ -121,7 +104,7 @@ body {
 
 .selectorimage {
     padding: 10px;
-    max-height:200px;
+    height: 90%;
     max-width:100%;
     vertical-align: middle;
     border-radius: 40px;
@@ -268,6 +251,14 @@ body {
 	height: 175px;
     background-color: rgba(128, 207, 232, 0.4);
     margin-bottom: 30px;
+}
+
+#custom_engine_update {
+    margin-top: 10px;
+}
+
+#enable_open_website {
+    margin-right: 10px;
 }
 
 /*=======
