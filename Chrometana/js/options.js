@@ -2,7 +2,7 @@ function save_options(key, element, value) {
   var options = {};
   options[key] = value;
   if(key == "custom_engine"){
-    options['search_engine'] = "Custom";
+    options.search_engine = "Custom";
   }
   chrome.storage.sync.set(options, function() {
     restore_options();
@@ -23,7 +23,6 @@ function updateDisplay(items){
     if (selectorList[i].getAttribute('value') == items.search_engine) {
       addClass(selectorList[i], 'selected');
       document.getElementById("webpage_diagram_placeholder").className = selectorList[i].getAttribute("data-icon-class");
-
     }
     else {
       removeClass(selectorList[i], 'selected');
@@ -53,6 +52,23 @@ var selectorList = document.getElementsByClassName('selector');
 
 document.addEventListener('DOMContentLoaded', restore_options);
 
+var optionCaller = function() {
+  save_options('search_engine',this, this.getAttribute('value'));
+};
+
+var handleMouseover = function() {
+  selectedElements = document.getElementsByClassName('selected');
+  for (i = 0; i <  selectedElements.length; i++) {
+    removeClass(selectedElements[i], 'selected');
+  }
+  addClass(this, 'selected');
+};
+
+var handleMouseout = function() {
+  removeClass(this, 'selected');
+  restore_options();
+};
+
 if (getURLVariable("newinstall") == "yes"){
   var installadvice = document.getElementById('installadvice');
   addClass(installadvice, 'visible');
@@ -60,15 +76,9 @@ if (getURLVariable("newinstall") == "yes"){
 
 
 for (i = 0; i <  selectorList.length; i++) {
-  selectorList[i].addEventListener('click', function() {
-    save_options('search_engine',this, this.getAttribute('value'))
-  });
-  selectorList[i].addEventListener('mouseover', function() {
-    handleMouseover(this);
-  });
-  selectorList[i].addEventListener('mouseleave', function() {
-    handleMouseout(this);
-  })
+  selectorList[i].addEventListener('click', optionCaller,false);
+  selectorList[i].addEventListener('mouseover', handleMouseover, false);
+  selectorList[i].addEventListener('mouseleave', handleMouseout, false);
 }
 
 document.getElementById('custom_engine_update').addEventListener('click', function() {
@@ -88,20 +98,7 @@ document.getElementById('additional-settings-toggle').addEventListener('click', 
   } else {
     addClass(settingsPane, 'open');
   }
-})
-
-function handleMouseover(element) {
-  selectedElements = document.getElementsByClassName('selected');
-  for (i = 0; i <  selectedElements.length; i++) {
-    removeClass(selectedElements[i], 'selected');
-  }
-  addClass(element, 'selected');
-}
-
-function handleMouseout(element) {
-  removeClass(element, 'selected');
-  restore_options();
-}
+});
 
 function addClass(element, classNameToAdd) {
   if (!element.className.includes(classNameToAdd)) {
