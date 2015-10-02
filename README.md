@@ -2,11 +2,11 @@ Chrometana
 ==============
 ![Logo](Chrometana/images/logo-128.png)
 
+[![Build Status](https://travis-ci.org/TheoBr/Chrometana.svg)](https://travis-ci.org/TheoBr/Chrometana)
+
 [Link to install on Chrome Web Store](https://chrome.google.com/webstore/detail/kaicbfmipfpfpjmlbpejaoaflfdnabnc)
 
 [Link to the Chrometana blog](http://Chrometana.Theo.li)
-
-![Travis](https://travis-ci.org/kyleladd/Chrometana.svg?branch=master)
 
 INTRODUCTION
 ------------
@@ -14,30 +14,40 @@ With the introduction of Windows 10 to the general public, Bing use is growing r
 
 VERSION
 ------------
-####v1.2.0 beta
+###v1.2.0 beta
+#####New Features
  - Added "Go to (website)" functionality, you can now tell Cortana to go to any website you want by [Claire Pitman](https://github.com/ClairePitman)
  - UI overhaul by [Maayan Kline](https://github.com/mok8) and [Courtney Tambling](http://courtneytambling.com/)
  - Updated Google logo
  - Added custom search engines by [kyleladd](https://github.com/kyleladd)
 
-####v1.1.2
+#####Development
+ - TravisCI implemented (obviously by [kyleladd](https://github.com/kyleladd))
+ - JSHint added as the preferred linter
+
+###v1.1.2
+#####Bug Fixes/Improvements
  - The url replacement has been removed and replaced in favor of a redirect fall-back script by [kyleladd](https://github.com/kyleladd). No more tab permissions!
 
-####v1.1.1
+###v1.1.1
+#####Bug Fixes/Improvements
  - Moved from redirects to URL replacement and reload added by [kyleladd](https://github.com/kyleladd)
-
  - Moved UI assets out of package to lower size. Options.html assets now load off of Chrometana.theo.li
 
-####v1.1.0
+###v1.1.0
+#####New Features
  - Major UI overhaul
 
-####v1.0.2
+###v1.0.2
+#####Bug Fixes/Improvements
  - Fix for background running issues
 
-####v1.0.1
+###v1.0.1
+#####Bug Fixes/Improvements
  - Actually removed welcome.html
 
-####v1.0.0
+###v1.0.0
+#####Bug Fixes/Improvements
  - Three search engines are supported, those being Google, Yahoo, and DuckDuckGo.
 
 INSTALLATION
