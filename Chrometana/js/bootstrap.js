@@ -5,11 +5,11 @@ function convertURL(url){
     log(url);
     url = url.replace(/%20/g,"+");
     var uri = /\?q\=([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*)($|(\&))/.exec(url)[1];
-    log(url);
-    log(uri);
-    log(storageChange);
-    var match = /^((go\+to\+)|(open\+)|())([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*\.[a-z]+)/i.exec(uri)
-    log(match)
+    log("url: " + url);
+    log("uri: " + uri);
+    log("StorageChange: " + storageChange);
+    var match = /^((go\+to\+)|(open\+)|())([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*\.[a-z]+)/i.exec(uri);
+    log(match);
     if(match){
         return "http://" + match[5];
     }
@@ -31,30 +31,32 @@ function convertURL(url){
     return "https://www.google.com/search?q=" + uri;
 }
 chrome.storage.sync.get(['search_engine','custom_engine'], function (obj) {
-    log('myKey', obj);
-    storageChange = obj['search_engine'];
+    log("obj: " + obj);
+    storageChange = obj.search_engine;
     if(storageChange == "Custom"){
-        custom_engine = obj['custom_engine'];
+        custom_engine = obj.custom_engine;
     }
 });
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {  
+    log("changes: ");
     log(changes);
-    if(typeof changes['search_engine'] !== "undefined"){
-        storageChange = changes['search_engine']['newValue'];
+    if(typeof changes.search_engine !== "undefined"){
+        storageChange = changes.search_engine.newValue;
     } 
     if(storageChange == "Custom"){
-        if(typeof changes['custom_engine'] !== "undefined"){
-            custom_engine = changes['custom_engine']['newValue'];
+        if(typeof changes.custom_engine !== "undefined"){
+            custom_engine = changes.custom_engine.newValue;
         } 
     }
-    log(storageChange);
-    log(custom_engine);
+    log("storageChange: " + storageChange);
+    log("custom_engine: " + custom_engine);
 });
 
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
-   	log(storageChange);
-    
+   	log("storageChange: " + storageChange);
+    log("details:");
+    log(details);
     return { redirectUrl: convertURL(details.url)};
 }, {urls: ["*://*.bing.com/search*"]}, ["blocking"]);
 
