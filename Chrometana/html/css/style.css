@@ -49,7 +49,7 @@ body {
 
 .diagram {
     flex-direction: column;
-    height: 250px;
+    height: 300px;
 }
 
 .diagram > div {
@@ -103,14 +103,21 @@ body {
 }
 
 .selectorimage {
+    cursor: pointer;
     padding: 10px;
-    height: 90%;
+    max-height: 90%;
     max-width:100%;
     vertical-align: middle;
     border-radius: 40px;
     -webkit-filter: grayscale(1);
     transition: 0.5s;
     opacity: 0.7;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;  
 }
 
 .selector {
@@ -218,8 +225,8 @@ body {
 }
 
 #expandable_settings_pane {
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-left: -15px;
+    margin-right: -15px;
     padding: 20px;
 }
 
@@ -308,4 +315,7 @@ a:active {
 
 .visible {
     display: block !important;
+}
+.pointer{
+    cursor: pointer;
 }
