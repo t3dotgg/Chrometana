@@ -12,6 +12,12 @@ With the introduction of Windows 10 to the general public, Bing use is growing r
 
 VERSION
 ------------
+####v1.2.0 beta
+ - Added "Go to (website)" functionality, you can now tell Cortana to go to any website you want
+ - UI overhaul (s/o Maayan and Court)
+ - Updated Google logo
+ - Added custom search engines by [kyleadd](https://github.com/kyleladd)
+
 ####v1.1.2
  - The url replacement has been removed and replaced in favor of a redirect fall-back script by [kyleadd](https://github.com/kyleladd). No more tab permissions!
 
@@ -40,6 +46,14 @@ INSTALLATION
   4. Click on `Load Unpacked Extension...`
   5. Select the folder containing the extension
 
+HOW TO CONTRIBUTE
+------------
+Want to contribute to Chrometana? Awesome! Feel free to make pull requests directly to the dev branch, or contact Theo with any questions at all at <theo@theobrowne.com>
+
 CREDITS
 ------------
-Developed by [Theo Browne](http://www.theo.li), [Claire Pitman](https://github.com/ClairePitman), and [Maayan Kline](https://github.com/mok8)
+Lead by [Theo Browne](http://www.theo.li)
+
+Original development team [Theo Browne](http://www.theo.li), [Claire Pitman](https://github.com/ClairePitman), and [Maayan Kline](https://github.com/mok8)
+
+Current maintainers [Theo Browne](http://www.theo.li), [Courtney Tambling](http://courtneytambling.com/), and [Kyle Ladd](https://github.com/kyleladd)
