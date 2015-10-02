@@ -13,16 +13,16 @@ With the introduction of Windows 10 to the general public, Bing use is growing r
 VERSION
 ------------
 ####v1.2.0 beta
- - Added "Go to (website)" functionality, you can now tell Cortana to go to any website you want
- - UI overhaul (s/o Maayan and Court)
+ - Added "Go to (website)" functionality, you can now tell Cortana to go to any website you want by [Claire Pitman](https://github.com/ClairePitman)
+ - UI overhaul by [Maayan Kline](https://github.com/mok8) and [Courtney Tambling](http://courtneytambling.com/)
  - Updated Google logo
- - Added custom search engines by [kyleadd](https://github.com/kyleladd)
+ - Added custom search engines by [kyleladd](https://github.com/kyleladd)
 
 ####v1.1.2
- - The url replacement has been removed and replaced in favor of a redirect fall-back script by [kyleadd](https://github.com/kyleladd). No more tab permissions!
+ - The url replacement has been removed and replaced in favor of a redirect fall-back script by [kyleladd](https://github.com/kyleladd). No more tab permissions!
 
 ####v1.1.1
- - Moved from redirects to URL replacement and reload added by [kyleadd](https://github.com/kyleladd)
+ - Moved from redirects to URL replacement and reload added by [kyleladd](https://github.com/kyleladd)
 
  - Moved UI assets out of package to lower size. Options.html assets now load off of Chrometana.theo.li
 
