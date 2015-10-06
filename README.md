@@ -2,7 +2,7 @@ Chrometana
 ==============
 ![Logo](Chrometana/images/logo-128.png)
 
-[![Build Status](https://travis-ci.org/TheoBr/Chrometana.svg)](https://travis-ci.org/TheoBr/Chrometana)
+[![Build Status](https://travis-ci.org/TheoBr/Chrometana.svg?branch=master)](https://travis-ci.org/TheoBr/Chrometana)
 
 [Link to install on Chrome Web Store](https://chrome.google.com/webstore/detail/kaicbfmipfpfpjmlbpejaoaflfdnabnc)
 
