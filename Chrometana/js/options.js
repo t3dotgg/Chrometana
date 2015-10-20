@@ -22,7 +22,7 @@ function updateDisplay(items){
   for (i = 0; i <  selectorList.length; i++) {
     if (selectorList[i].getAttribute('value') == items.search_engine) {
       addClass(selectorList[i], 'selected');
-      document.getElementById("webpage_diagram_placeholder").className = selectorList[i].getAttribute("data-icon-class");
+      // document.getElementById("webpage_diagram_placeholder").className = selectorList[i].getAttribute("data-icon-class");
     }
     else {
       removeClass(selectorList[i], 'selected');
@@ -93,10 +93,17 @@ document.getElementById('custom_engine_update').addEventListener('click', functi
 
 document.getElementById('additional-settings-toggle').addEventListener('click', function() {
   var settingsPane = document.getElementById('expandable_settings_pane');
+  var engines = document.getElementById('custom-engine-select');
+  console.log(engines)
+
   if (settingsPane.className.search('open') >= 0) {
     removeClass(settingsPane, 'open');
+    removeClass(engines, 'hidden')
+
   } else {
     addClass(settingsPane, 'open');
+    addClass(engines, 'hidden')
+
   }
 });
 

@@ -1,12 +1,10 @@
 body {
-    background-color: #03689d;
+    background-color: #FFFFFF;
     color: #fff;
 }
 
 .content {
     position: relative;
-    width: 100%;
-    height: 250px;
 	text-align: center;
     padding-bottom: 20px;
 }
@@ -14,42 +12,39 @@ body {
     position: absolute;
     top: 0px;
     right: 0px;
+    z-index: 5;
     max-width:100%;
     max-height:70%;
     padding: 8px;
-    background-color: #03689d;
-    color: #80CFE8;
+    background-color: #1c9fe7;
     border-bottom-left-radius: 10px; /* standards-compliant: (IE) */ 
 }
 .centerlogo {
 	padding-top: 20px;
-	max-height: 45%;
+	max-height: 130px;
     display: inline-block;
 }
 
 .title {
-    position: relative;
-    display: inline-block;
-    padding-top: 10px;
-    width: 100%;
-    height: 30%;
+    margin-top: -20px;
 	text-align: center;
-	font-family: wf_segoe-ui,Tahoma,Verdana,Arial,sans-serif;
+	font-family: 'Raleway',Tahoma,Verdana,Arial,sans-serif;
 	font-size: 40px;
-	color: #B1DDEA;
+	color: #03689d;
+    vertical-align: center;
 }
 
 .subtitle {
     position: relative;
     padding-top: 10px;
-    width: 100%;
     text-align: center;
     font-size: 25px;
+    font-weight: 400;
 }
 
 .diagram {
     flex-direction: column;
-    height: 300px;
+    max-height: 275px;
 }
 
 .diagram > div {
@@ -105,7 +100,7 @@ body {
 .selectorimage {
     cursor: pointer;
     padding: 10px;
-    max-height: 90%;
+    max-height: 60%;
     max-width:100%;
     vertical-align: middle;
     border-radius: 40px;
@@ -126,13 +121,16 @@ body {
 
 .selected img {
     -webkit-filter: grayscale(0);
+    max-height: 120%;
+    max-width: 120%;
+    height: 120%;
     opacity: 1;
 }
 
 .settings-btn,
 .settings-btn:focus {
     color: white;
-    background-color: rgba(128, 207, 232, 0.4);
+    background-color: #1c9fe7;
     width: auto;
     text-align: center;
     margin: 30px auto;
@@ -143,11 +141,10 @@ body {
 .settings-btn:hover, 
 .settings-btn:active {
     color: white;
-    background-color: #1c9fe7;
+    background-color: rgba(128, 207, 232, 0.4);
 }
 
 #expandable_settings_pane #settings_container {
-    margin: .2rem;
     overflow: hidden;
     height: auto;
     opacity: 0;
@@ -207,7 +204,7 @@ body {
 #expandable_settings_pane.open {
     transition: 0.5s;
     transition-delay: 0.25s;
-    background-color: rgba(154, 218, 246, 0.4);
+    background-color: #03689d;
 }
 
 #expandable_settings_pane.open #webpage_diagram {
@@ -225,9 +222,9 @@ body {
 }
 
 #expandable_settings_pane {
-    margin-left: -15px;
-    margin-right: -15px;
     padding: 20px;
+    border-radius: 10px; /* standards-compliant: (IE) */ 
+
 }
 
 #status {
@@ -255,8 +252,7 @@ body {
 
 /*<<<<<<< HEAD*/
 .engines {
-	height: 175px;
-    background-color: rgba(128, 207, 232, 0.4);
+	height: 100px;
     margin-bottom: 30px;
 }
 
@@ -301,16 +297,16 @@ input.toggle {
 }
 
 a {
-    color: #80CFE8;
+    color: #ffffff;
 }
 a:visited {
-    color: #80CFE8;
+    color: #ffffff;
 }
 a:hover {
-    color: #80CFE8;
+    color: #ffffff;
 }
 a:active {
-    color: #80CFE8;
+    color: #ffffff;
 }
 
 .visible {
