@@ -193,10 +193,23 @@ document.getElementById('custom_engine_update').addEventListener('click', functi
 document.getElementById('additional-settings-toggle').addEventListener('click', function() {
   var settingsPane = document.getElementById('expandable_settings_pane');
   var engines = document.getElementById('custom-engine-select');
+<<<<<<< e92cc44d75be100c302b351adee900cbfee418cc
 
   if (settingsPane.className.search('open') >= 0) {
     removeClass(settingsPane, 'open');
     removeClass(engines, 'hidden');
+=======
+  console.log(engines)
+
+  if (settingsPane.className.search('open') >= 0) {
+    removeClass(settingsPane, 'open');
+    removeClass(engines, 'hidden')
+
+  } else {
+    addClass(settingsPane, 'open');
+    addClass(engines, 'hidden')
+
+>>>>>>> Updated UI with additional bootstrap and continuity
   }
   else {
     addClass(settingsPane, 'open');

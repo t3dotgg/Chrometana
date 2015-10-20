@@ -268,6 +268,12 @@ input[type="checkbox"] {
     margin-right: 10px;
 }
 
+.pull-right-button {
+    float: right;
+}
+
+/*=======
+>>>>>>> Custom Search Engine*/
 /*JS-free CSS3 transition voodoo magic*/
 input.toggle {
     display: none;
