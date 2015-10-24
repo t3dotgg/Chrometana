@@ -1,17 +1,23 @@
 var custom_engine;
 var storageChange;
+var enable_open_website;
 var debugging = false;
 function convertURL(url){
+    log("convertURL");
     log(url);
     url = url.replace(/%20/g,"+");
     var uri = /\?q\=([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*)($|(\&))/.exec(url)[1];
     log("url: " + url);
     log("uri: " + uri);
     log("StorageChange: " + storageChange);
-    var match = /^((go\+to\+)|(open\+)|())([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*\.[a-z]+)/i.exec(uri);
-    log(match);
-    if(match){
-        return "http://" + match[5];
+    log("enable_open_website: " + enable_open_website);
+    if(enable_open_website === true){
+        var match = /^((go\+to\+)|(open\+)|())([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*\.[a-z]+)/i.exec(uri);
+        log("match: ");
+        log(match);
+        if(match){
+            return "http://" + match[5];
+        }
     }
     if(storageChange == "Google.com"){
         return "https://www.google.com/search?q=" + uri;
@@ -27,9 +33,11 @@ function convertURL(url){
     }
     return "https://www.google.com/search?q=" + uri;
 }
-chrome.storage.sync.get(['search_engine','custom_engine'], function (obj) {
-    log("obj: " + obj);
+chrome.storage.sync.get(['search_engine','custom_engine','enable_open_website'], function (obj) {
+    log("obj:");
+    log(obj);
     storageChange = obj.search_engine;
+    enable_open_website = obj.enable_open_website;
     if(storageChange == "Custom"){
         custom_engine = obj.custom_engine;
     }
@@ -44,10 +52,14 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
     if(storageChange == "Custom"){
         if(typeof changes.custom_engine !== "undefined"){
             custom_engine = changes.custom_engine.newValue;
-        } 
+        }
     }
+    if(typeof changes.enable_open_website !== "undefined"){
+        enable_open_website = changes.enable_open_website.newValue;
+    } 
     log("storageChange: " + storageChange);
     log("custom_engine: " + custom_engine);
+    log("enable_open_website: " + enable_open_website);
 });
 
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
