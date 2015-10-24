@@ -14,7 +14,7 @@ With the introduction of Windows 10 to the general public, Bing use is growing r
 
 VERSION
 ------------
-###v1.2.0 beta
+###v2.0.0 beta
 #####New Features
  - Added "Go to (website)" functionality, you can now tell Cortana to go to any website you want by [Claire Pitman](https://github.com/ClairePitman)
  - UI overhaul by [Maayan Kline](https://github.com/mok8) and [Courtney Tambling](http://courtneytambling.com/)
@@ -24,6 +24,10 @@ VERSION
 #####Development
  - TravisCI implemented (obviously by [kyleladd](https://github.com/kyleladd))
  - JSHint added as the preferred linter
+
+#####Known Issues
+ - "Go To (website)" toggle is broken, always on
+ - Clearing the "Custom Search Engine" field can be annoying at best
 
 ###v1.1.2
 #####Bug Fixes/Improvements

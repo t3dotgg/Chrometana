@@ -13,9 +13,6 @@ function convertURL(url){
     if(match){
         return "http://" + match[5];
     }
-    if(url.search("search?q=go%20to%20") != -1){
-        return "http://" + url.substring(url.search('=') + 11, url.search('&'));
-    }
     if(storageChange == "Google.com"){
         return "https://www.google.com/search?q=" + uri;
     }

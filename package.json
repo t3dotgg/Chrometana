@@ -2,7 +2,7 @@
   "name": "Chrometana",
   "description": "Redirect Bing Somewhere Better http://Chrometana.Theo.li",
   "author": "Theo Browne",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "devDependencies": {
     "jshint": "^2.6.0"
   },
