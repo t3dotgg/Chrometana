@@ -113,7 +113,6 @@ body {
     left: 0;  
     right: 0;  
     margin: auto; 
-
 }
 
 .selector {
@@ -129,7 +128,6 @@ body {
 }
 .selected img {
     -webkit-filter: grayscale(0);
-    /*background-color: rgb(158, 220, 247);*/
     border: 5px solid rgb(158, 220, 247);
     box-sizing: content-box;
 }
@@ -257,7 +255,6 @@ body {
     display: none;
 }
 
-/*<<<<<<< HEAD*/
 .engines {
 	height: 100px;
     margin-bottom: 30px;
@@ -271,8 +268,6 @@ body {
     margin-right: 10px;
 }
 
-/*=======
->>>>>>> Custom Search Engine*/
 /*JS-free CSS3 transition voodoo magic*/
 input.toggle {
     display: none;
