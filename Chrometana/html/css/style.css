@@ -318,3 +318,9 @@ a:active {
 .pointer{
     cursor: pointer;
 }
+.float-right{
+    float:right;
+}
+.float-left{
+    float:right;
+}
