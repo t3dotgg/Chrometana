@@ -56,11 +56,19 @@
 				<div id="settings_container">
 					<form>
 						<div>
-							<div class="form-group container"><input type="checkbox" id="enable_open_website" /><label for="enable_open_website" class="pointer">Enable "Open Website"</label><br /></div>
+							<div class="form-group container">
+								<input type="checkbox" id="enable_open_website" /><label for="enable_open_website" class="pointer">Enable "Open Website"</label>
+							</div>
 						</div>
 						<div>
-							<div class="form-group"><label for="custom_engine">Use a Custom Search Engine</label><input id="custom_engine" class="form-control" placeholder="https://"></div>
-							<div class="col-xs-offset-10 col-xs-2"><button class="btn btn-default" id="custom_engine_update">Update</button>
+							<div class="form-group container">
+								<label class="pointer"><input type="checkbox" name="useCustomSearch" id="useCustomSearch" />&nbsp;&nbsp;Use a Custom Search Engine</label>
+							</div>
+							<div id="custom_engine_settings">
+								<input id="custom_engine" class="form-control" placeholder="http://www.ask.com/web?q=">
+							</div>
+							<div class="col-xs-offset-10 col-xs-2">
+								<button class="btn btn-default" id="custom_settings_update">Update</button>
 							</div>
 						</div>
 					</form>
