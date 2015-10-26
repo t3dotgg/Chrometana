@@ -112,19 +112,24 @@ body {
     bottom: 0;  
     left: 0;  
     right: 0;  
-    margin: auto;  
+    margin: auto; 
 }
 
 .selector {
     height: 100%;
 }
 
-.selected img {
+.hovering img {
     -webkit-filter: grayscale(0);
     max-height: 120%;
     max-width: 120%;
     height: 120%;
     opacity: 1;
+}
+.selected img {
+    -webkit-filter: grayscale(0);
+    border: 5px solid rgb(158, 220, 247);
+    box-sizing: content-box;
 }
 
 .settings-btn,
@@ -231,8 +236,8 @@ body {
     height: 45px;
     text-align: center;
     font-size: 20px;
-    color: #B1DDEA;
-    padding-top: 10px;
+    color: rgb(36, 123, 171);
+    margin-bottom: 15px;
     transition: 0.5s;
     opacity: 0;
 }
@@ -250,7 +255,6 @@ body {
     display: none;
 }
 
-/*<<<<<<< HEAD*/
 .engines {
 	height: 100px;
     margin-bottom: 30px;
@@ -264,8 +268,6 @@ body {
     margin-right: 10px;
 }
 
-/*=======
->>>>>>> Custom Search Engine*/
 /*JS-free CSS3 transition voodoo magic*/
 input.toggle {
     display: none;
@@ -295,7 +297,9 @@ input.toggle {
 #additional_settings_container input {
     margin: 5px;
 }
-
+#custom_engine_settings{
+    display:none;
+}
 a {
     color: #ffffff;
 }
@@ -308,10 +312,15 @@ a:hover {
 a:active {
     color: #ffffff;
 }
-
 .visible {
     display: block !important;
 }
 .pointer{
     cursor: pointer;
+}
+.float-right{
+    float:right;
+}
+.float-left{
+    float:right;
 }
