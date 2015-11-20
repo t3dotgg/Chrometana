@@ -61,7 +61,8 @@ function restore_options() {
   chrome.storage.sync.get({
     search_engine: defaultSE, 
     custom_engine: '',
-    enable_open_website: false
+    enable_open_website: false,
+    all_bing_searches: false
   }, function(items) {
     updateDisplay(items);
   });

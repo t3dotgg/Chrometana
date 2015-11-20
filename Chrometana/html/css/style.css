@@ -264,7 +264,7 @@ body {
     margin-top: 10px;
 }
 
-#enable_open_website {
+input[type="checkbox"] {
     margin-right: 10px;
 }
 
