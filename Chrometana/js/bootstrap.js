@@ -1,20 +1,17 @@
 var custom_engine;
 var storageChange;
 var enable_open_website;
-var debugging = false;
 function convertURL(url){
-    log("convertURL");
-    log(url);
+    var querystringparams = getUrlVars(url);
+    var source = getKeyValue(querystringparams, "form");
+    //Cortana is not the source don't redirect
+    if(source != "WNSGPH" && source != "WNSBOX"){
+        return url;
+    }
     url = url.replace(/%20/g,"+");
     var uri = /\?q\=([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*)($|(\&))/.exec(url)[1];
-    log("url: " + url);
-    log("uri: " + uri);
-    log("StorageChange: " + storageChange);
-    log("enable_open_website: " + enable_open_website);
     if(enable_open_website === true){
         var match = /^((go\+to\+)|(open\+)|())([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*\.[a-z]+)/i.exec(uri);
-        log("match: ");
-        log(match);
         if(match){
             return "http://" + match[5];
         }
@@ -33,9 +30,26 @@ function convertURL(url){
     }
     return "https://www.google.com/search?q=" + uri;
 }
+function getUrlVars(url)
+{
+    var vars = [], hash;
+    var hashes = url.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+function getKeyValue(dictionary,key){
+    if(key in dictionary){
+        return dictionary[key];
+    }
+    return "";
+}
+
 chrome.storage.sync.get(['search_engine','custom_engine','enable_open_website'], function (obj) {
-    log("obj:");
-    log(obj);
     storageChange = obj.search_engine;
     enable_open_website = obj.enable_open_website;
     if(storageChange == "Custom"){
@@ -44,8 +58,6 @@ chrome.storage.sync.get(['search_engine','custom_engine','enable_open_website'],
 });
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {  
-    log("changes: ");
-    log(changes);
     if(typeof changes.search_engine !== "undefined"){
         storageChange = changes.search_engine.newValue;
     } 
@@ -57,16 +69,13 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
     if(typeof changes.enable_open_website !== "undefined"){
         enable_open_website = changes.enable_open_website.newValue;
     } 
-    log("storageChange: " + storageChange);
-    log("custom_engine: " + custom_engine);
-    log("enable_open_website: " + enable_open_website);
 });
 
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
-   	log("storageChange: " + storageChange);
-    log("details:");
-    log(details);
-    return { redirectUrl: convertURL(details.url)};
+    var newurl = convertURL(details.url);
+    if(newurl != details.url){
+        return { redirectUrl: convertURL(details.url)};
+    }
 }, {urls: ["*://*.bing.com/search*"]}, ["blocking"]);
 
 // Redirect to welcome.html on install
@@ -85,9 +94,4 @@ function onMessage(request, sender, callback) {
         callback(convertURL(request.url));
     }
     return true;
-}
-function log(txt) {
-    if(debugging) {
-      console.log(txt);
-    }
 }
