@@ -147,13 +147,11 @@ function getURLVariable(variable){
 }
 
 function addClass(element, classNameToAdd) {
-  if (!element.className.includes(classNameToAdd)) {
-    element.className = element.className + ' ' + classNameToAdd;
-  }
+  element.classList.add(classNameToAdd);
 }
 
-function removeClass(element, classNameToAdd) {
-  element.className = element.className.replace(classNameToAdd, '');
+function removeClass(element, classNameToRemove) {
+  element.classList.remove(classNameToRemove);
 }
 
 String.prototype.contains = function(text) {
