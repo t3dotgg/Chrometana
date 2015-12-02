@@ -79,18 +79,6 @@ body {
     background-position: center;
 }
 
-.google-webpage {
-    background-image: url("/images/GoogleImage.png");
-}
-
-.duckduckgo-webpage {
-    background-image: url("/images/DuckDuckGoImage.png");
-}
-
-.yahoo-webpage {
-    background-image: url("/images/YahooImage.png");
-}
-
 .selector div {
     text-align: center;
     height: 100%;
@@ -106,7 +94,7 @@ body {
     border-radius: 40px;
     -webkit-filter: grayscale(1);
     transition: 0.5s;
-    opacity: 0.7;
+    opacity: 0.5;
     position: absolute;  
     top: 0;  
     bottom: 0;  
@@ -115,15 +103,28 @@ body {
     margin: auto; 
 }
 
-.selector {
+.selector{
+    /*max-height: 300px;*/
     height: 100%;
+    /*width: 300px;*/
+    /*width: auto;*/
+}
+
+.selected {
+    border-radius: 50%; /* standards-compliant: (IE) */ 
+    border-style: solid;
+    max-height: 150%;
+    max-width: 150%;
+    /*box-shadow: 10px 10px 5px #888888;*/
+    /*border-color: rgba(128, 207, 232, 0.4);*/
 }
 
 .hovering img {
     -webkit-filter: grayscale(0);
-    max-height: 120%;
-    max-width: 120%;
-    height: 120%;
+    max-height: 150%;
+    /*height: 150%;*/
+    /*width: 400px;*/
+    /*padding: 20px;*/
     opacity: 1;
 }
 .selected img {
