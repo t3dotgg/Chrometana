@@ -3,7 +3,8 @@ var advanced_settings = document.getElementsByClassName('chrometana_advanced_set
 var useCustomSearch = document.getElementById('useCustomSearch');
 var custom_engine_settings = document.getElementById('custom_engine_settings');
 var selectorList = document.getElementsByClassName('selector');
-
+var all_bing_searches = document.getElementById('all_bing_searches');
+var search_exclusions = document.getElementById('search_exclusions');
 if (getURLVariable("newinstall") == "yes"){
   var installadvice = document.getElementById('installadvice');
   addClass(installadvice, 'visible');
@@ -62,7 +63,8 @@ function restore_options() {
     search_engine: defaultSE, 
     custom_engine: '',
     enable_open_website: false,
-    all_bing_searches: false
+    all_bing_searches: false,
+    exclude_settings_app: true
   }, function(items) {
     updateDisplay(items);
   });
@@ -86,6 +88,7 @@ function updateDisplay(items){
   document.getElementById("custom_engine").value = items.custom_engine;
   updateCustomSearchView();
   updateCheckBoxes(items);
+  updateSearchExclusions();
   var status = document.getElementById('status');
   addClass(status, 'updated');
     status.textContent = 'New search engine preferences saved.';
@@ -118,6 +121,15 @@ function updateCustomSearchView(){
   }
   else{
     removeClass(custom_engine_settings, 'visible');
+  }
+}
+
+function updateSearchExclusions(){
+  if(all_bing_searches.checked){
+    addClass(search_exclusions, 'visible');
+  }
+  else{
+    removeClass(search_exclusions, 'visible');
   }
 }
 

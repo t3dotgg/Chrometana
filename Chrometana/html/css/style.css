@@ -5,7 +5,7 @@ body {
 
 .content {
     position: relative;
-	text-align: center;
+    text-align: center;
     padding-bottom: 20px;
 }
 .fixed-top-right {
@@ -20,17 +20,17 @@ body {
     border-bottom-left-radius: 10px; /* standards-compliant: (IE) */ 
 }
 .centerlogo {
-	padding-top: 20px;
-	max-height: 130px;
+    padding-top: 20px;
+    max-height: 130px;
     display: inline-block;
 }
 
 .title {
     margin-top: -20px;
-	text-align: center;
-	font-family: 'Raleway',Tahoma,Verdana,Arial,sans-serif;
-	font-size: 40px;
-	color: #03689d;
+    text-align: center;
+    font-family: 'Raleway',Tahoma,Verdana,Arial,sans-serif;
+    font-size: 40px;
+    color: #03689d;
     vertical-align: center;
 }
 
@@ -256,7 +256,7 @@ body {
 }
 
 .engines {
-	height: 100px;
+    height: 100px;
     margin-bottom: 30px;
 }
 
@@ -323,4 +323,11 @@ a:active {
 }
 .float-left{
     float:right;
+}
+
+#search_exclusions{
+    display:none;
+    padding-left: 10px;
+    background-color: #1C9FE7;
+    border-radius: 4px;
 }
