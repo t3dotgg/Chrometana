@@ -58,19 +58,20 @@
 							<h3>Optional Features</h3>
 							<section class="col-md-6 col-sm-6 col-lg-6">
 							<div class="form-group">
-									<input type="checkbox" id="enable_open_website" class="chrometana_advanced_setting" /><label for="enable_open_website" class="pointer">Enable "Open Website"</label>
+									<input type="checkbox" id="enable_open_website" class="" /><label for="enable_open_website" class="pointer">Enable "Open Website"</label>
 									<div class="helper-text">
 										<p>Enable abilty to search "Open example.com" and load example.com</p>
 									</div>
+									<br>
 								</div>							
 							</section>
 							<section class="col-md-6 col-sm-6 col-lg-6">
 								<div>
-									<label for="all_bing_searches" class="pointer radio-inline chrometana_advanced_setting"><input type="radio" id="all_bing_searches" class="chrometana_advanced_setting">Apply to all Bing Searches</label>
+									<label for="all_bing_searches" class="pointer radio-inline option-text"><input type="radio" id="all_bing_searches" name="searchType" class="chrometana_advanced_setting">Apply to all Bing Searches</label>
 									<div class="helper-text">
 										<p>Redirect all searches sent to bing (including Cortana)</p>
 									</div>
-									<label for="exclude_settings_app" class="pointer radio-inline chrometana_advanced_setting"><input type="radio" class="chrometana_advanced_setting">Apply Only to Cortana Searches</label>
+									<label for="exclude_settings_app" id="exclude_settings_app" name="searchType" class="option-text pointer radio-inline"><input type="radio" class="chrometana_advanced_setting">Apply Only to Cortana Searches</label>
 									<div class="helper-text">
 										<p>Only redirect searches that come from Cortana</p>
 									</div>

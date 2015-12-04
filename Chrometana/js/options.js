@@ -33,7 +33,8 @@ var handleMouseout = function() {
 var advancedSettingsCaller = function() {
   var id = this.id;
   var value;
-  if(this.getAttribute("type")=="checkbox"){
+  console.log(id);
+  if(this.getAttribute("type")=="checkbox" || this.getAttribute("type")=="radio"){
     if(this.checked){
       value = true;
     }
@@ -106,7 +107,7 @@ function updateCheckBoxes(items){
     var id = advanced_settings[i].getAttribute("id");
     if(id in items){
       if(items[id]===true){
-        document.getElementById(id).checked = true;
+        document.getElementById(id).defaultValue = true;
       }
       else{
         document.getElementById(id).checked = false;

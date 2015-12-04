@@ -325,7 +325,10 @@ a:active {
 .float-left{
     float:right;
 }
-.chrometana_advanced_setting {
+.chrometana_advanced_setting{
+    font-weight: bold;
+}
+.option-text{
     font-weight: bold;
 }
 section {
