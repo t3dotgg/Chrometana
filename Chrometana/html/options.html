@@ -55,28 +55,41 @@
 				<div class="diagram col-sm-offset-3 col-sm-6" id="expandable_settings_pane">
 					<div id="settings_container">
 						<form>
-							<div>
-								<div class="form-group">
+							<h3>Optional Features</h3>
+							<section class="col-md-6 col-sm-6 col-lg-6">
+							<div class="form-group">
 									<input type="checkbox" id="enable_open_website" class="chrometana_advanced_setting" /><label for="enable_open_website" class="pointer">Enable "Open Website"</label>
+									<div class="helper-text">
+										<p>Enable abilty to search "Open example.com" and load example.com</p>
+									</div>
+								</div>							
+							</section>
+							<section class="col-md-6 col-sm-6 col-lg-6">
+								<div>
+									<label for="all_bing_searches" class="pointer radio-inline chrometana_advanced_setting"><input type="radio" id="all_bing_searches" class="chrometana_advanced_setting">Apply to all Bing Searches</label>
+									<div class="helper-text">
+										<p>Redirect all searches sent to bing (including Cortana)</p>
+									</div>
+									<label for="exclude_settings_app" class="pointer radio-inline chrometana_advanced_setting"><input type="radio" class="chrometana_advanced_setting">Apply Only to Cortana Searches</label>
+									<div class="helper-text">
+										<p>Only redirect searches that come from Cortana</p>
+									</div>
 								</div>
-								<div class="form-group">
-									<input type="checkbox" id="all_bing_searches" class="chrometana_advanced_setting" /><label for="all_bing_searches" class="pointer">Apply to all Bing Searches</label>
-								</div>
-								<div id="search_exclusions" class="form-group">
-									<input type="checkbox" id="exclude_settings_app" class="chrometana_advanced_setting" /><label for="exclude_settings_app" class="pointer">Exclude Windows 10 Settings App Searches</label>
-								</div>
-							</div>
-							<div>
-								<div class="form-group">
+							</section>
+							<section class="pull-left col-md-12 col-sm-12 col-lg-12">
+								<h3>Custom Search Engine</h3>
+								<div class="space-bottom">
 									<label class="pointer"><input type="checkbox" name="useCustomSearch" id="useCustomSearch" />Use a Custom Search Engine</label>
 								</div>
+
 								<div id="custom_engine_settings">
-									<input id="custom_engine" class="form-control" placeholder="http://www.ask.com/web?q=">
-									<div class="float-right">
+										<input id="custom_engine" class="form-control pull-right" placeholder="http://www.ask.com/web?q=">
+									<div class="pull-right">
 										<button class="btn btn-default" id="custom_engine_update">Update</button>
 									</div>
 								</div>
-							</div>
+							</section>
+
 						</form>
 					</div>
 				</div>

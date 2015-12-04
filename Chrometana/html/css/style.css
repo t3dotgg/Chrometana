@@ -1,6 +1,8 @@
 body {
     background-color: #FFFFFF;
     color: #fff;
+    font-family: 'Raleway',Tahoma,Verdana,Arial,sans-serif;
+
 }
 
 .content {
@@ -44,7 +46,6 @@ body {
 
 .diagram {
     flex-direction: column;
-    max-height: 275px;
 }
 
 .diagram > div {
@@ -88,7 +89,7 @@ body {
 .selectorimage {
     cursor: pointer;
     padding: 10px;
-    max-height: 60%;
+    max-height: 80%;
     max-width:100%;
     vertical-align: middle;
     border-radius: 40px;
@@ -104,32 +105,27 @@ body {
 }
 
 .selector{
-    /*max-height: 300px;*/
     height: 100%;
-    /*width: 300px;*/
-    /*width: auto;*/
 }
 
 .selected {
     border-radius: 50%; /* standards-compliant: (IE) */ 
     border-style: solid;
-    max-height: 150%;
-    max-width: 150%;
-    /*box-shadow: 10px 10px 5px #888888;*/
-    /*border-color: rgba(128, 207, 232, 0.4);*/
+    max-height: 120%;
+    max-width: 120%;
+}
+
+.helper-text {
+    padding-left: 2em;
 }
 
 .hovering img {
     -webkit-filter: grayscale(0);
-    max-height: 150%;
-    /*height: 150%;*/
-    /*width: 400px;*/
-    /*padding: 20px;*/
     opacity: 1;
 }
 .selected img {
-    -webkit-filter: grayscale(0);
-    border: 5px solid rgb(158, 220, 247);
+    /*-webkit-filter: grayscale(0);*/
+    max-height: 110%;
     box-sizing: content-box;
 }
 
@@ -288,7 +284,7 @@ input.toggle {
     height: auto;
 }
 #additional-settings-toggle.toggle:checked ~ #additional_settings_container {
-    max-height: 1000px;
+    max-height: 100%;
 }
 
 #additional_settings_container {
@@ -329,10 +325,9 @@ a:active {
 .float-left{
     float:right;
 }
-
-#search_exclusions{
-    display:none;
-    padding-left: 10px;
-    background-color: #1C9FE7;
-    border-radius: 4px;
+.chrometana_advanced_setting {
+    font-weight: bold;
+}
+section {
+    margin-bottom:1em;
 }

@@ -4,7 +4,6 @@ var useCustomSearch = document.getElementById('useCustomSearch');
 var custom_engine_settings = document.getElementById('custom_engine_settings');
 var selectorList = document.getElementsByClassName('selector');
 var all_bing_searches = document.getElementById('all_bing_searches');
-var search_exclusions = document.getElementById('search_exclusions');
 if (getURLVariable("newinstall") == "yes"){
   var installadvice = document.getElementById('installadvice');
   addClass(installadvice, 'visible');
@@ -19,11 +18,16 @@ var handleMouseover = function() {
   for (i = 0; i <  selectedElements.length; i++) {
     removeClass(selectedElements[i], 'hovering');
   }
+  var selected = document.getElementsByClassName('selected')[0];
+  removeClass(selected, 'hovering');
   addClass(this, 'hovering');
+
 };
 
 var handleMouseout = function() {
+  var selected = document.getElementsByClassName('selected')[0];
   removeClass(this, 'hovering');
+  addClass(selected, 'hovering');
 };
 
 var advancedSettingsCaller = function() {
@@ -88,7 +92,6 @@ function updateDisplay(items){
   document.getElementById("custom_engine").value = items.custom_engine;
   updateCustomSearchView();
   updateCheckBoxes(items);
-  updateSearchExclusions();
   var status = document.getElementById('status');
   addClass(status, 'updated');
     status.textContent = 'New search engine preferences saved.';
@@ -109,7 +112,7 @@ function updateCheckBoxes(items){
         document.getElementById(id).checked = false;
       }
     }
-    else{
+    else if (id != null){
       document.getElementById(id).checked = false;
     }
   }
@@ -124,14 +127,6 @@ function updateCustomSearchView(){
   }
 }
 
-function updateSearchExclusions(){
-  if(all_bing_searches.checked){
-    addClass(search_exclusions, 'visible');
-  }
-  else{
-    removeClass(search_exclusions, 'visible');
-  }
-}
 
 //Parses arguments from URL
 function getURLVariable(variable){
