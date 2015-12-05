@@ -79,6 +79,7 @@ function updateDisplay(items){
   for (i = 0; i <  selectorList.length; i++) {
     if (selectorList[i].getAttribute('value') == items.search_engine) {
       addClass(selectorList[i], 'selected');
+      addClass(selectorList[i], 'hovering');
     }
     else {
       removeClass(selectorList[i], 'selected');
