@@ -14,7 +14,15 @@ With the introduction of Windows 10 to the general public, Bing use is growing r
 
 VERSION
 ------------
-###v2.0.0 beta
+###v2.0.0 beta 2
+#####New features
+ - Ability to choose between "all searches" and "only Cortana searches" for redirection
+ - UI overhaul complete
+
+####Bug fixes
+ - CSS bug causing buttons to disappear fixed by [kyleladd](https://github.com/kyleladd)
+
+###v2.0.0 beta 1
 #####New Features
  - Added "Go to (website)" functionality, you can now tell Cortana to go to any website you want by [Claire Pitman](https://github.com/ClairePitman)
  - UI overhaul by [Maayan Kline](https://github.com/mok8) and [Courtney Tambling](http://courtneytambling.com/)
