@@ -4,39 +4,98 @@
 		<title>Welcome to Chrometana!</title>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+		<!-- Google Web Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 
 	<body>
-		<div id="content">
-    		<div id="right"><a href="http://Chrometana.theo.li">Check out our blog!</a></div>
-    		<img src="http://chrometana.theo.li/wp-content/uploads/2015/08/logo-minimal-600.png" id="centerlogo"/>
-			<div id="title">
-				Chrometana
-				<div id="subtitle">
-					Pick your preferred search engine from below
-				</div>
+		<div class="fixed-top-right"><a href="http://Chrometana.theo.li">Check out our blog!</a></div>
+
+		<div class="content">
+    		<img  class="centerlogo" src="http://chrometana.theo.li/wp-content/uploads/2015/08/logo-minimal-600.png"/>
+			<div class="title">
+				<h1>Chrometana</h1>
+			</div>
+		</div>
+		<div class="content">
+			<div class="title subtitle">
+				Pick your preferred search engine from below
 			</div>
 		</div>
 
-		<div id="status"></div>
+		<div id="status">New search engine preferences saved</div>
+		<div id="installadvice">To come back to this page at any time, go to Chrome Settings, open Extensions, and click Options underneath Chrometana</div>
 		<div class="container">
-			<div class="row" id="engines">
-				<div class="col-md-4 selector" value="Google.com">
-					<img src="http://chrometana.theo.li/wp-content/uploads/2015/08/google.png" class="selectorimage"/>
+			<div class="row engines col-xs-10 col-xs-offset-1" id="custom-engine-select">
+				<div class="col-xs-4 selector" value="Google.com">
+					<div>
+						<img class="selectorimage" src="../images/google.png"/>
+					</div>
 				</div>
-				<div class="col-md-4 selector" value="DuckDuckGo.com">
-					<img src="http://chrometana.theo.li/wp-content/uploads/2015/08/duckDuckGo.png" class="selectorimage"/>
+				<div class="col-xs-4 selector" value="DuckDuckGo.com">
+					<div>
+						<img class="selectorimage" src="http://chrometana.theo.li/wp-content/uploads/2015/08/duckDuckGo.png"/>
+					</div>
 				</div>
-				<div class="col-md-4 selector" value="Yahoo.com">
-					<img src="http://chrometana.theo.li/wp-content/uploads/2015/08/yahoo.png" class="selectorimage"/>
+				<div class="col-xs-4  selector" value="Yahoo.com">
+					<div >
+						<img class="selectorimage" src="../images/yahoo.png"/>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div id="installadvice"></div>
+			<div class="row">
+				<input type="checkbox" class="toggle" id="additional-settings-toggle" />
+				<label class="settings-btn btn" for="additional-settings-toggle">Additional Settings</label>
+			</div>
+			<div class="row">
+				<div class="diagram col-sm-offset-3 col-sm-6" id="expandable_settings_pane">
+					<div id="settings_container">
+						<form>
+							<h3>Optional Features</h3>
+							<section class="col-md-6 col-sm-6 col-lg-6">
+							<div class="form-group">
+									<input type="checkbox" id="enable_open_website" class="" /><label for="enable_open_website" class="pointer">Enable "Open Website"</label>
+									<div class="helper-text">
+										<p>Enable abilty to search "Open example.com" and load example.com</p>
+									</div>
+									<br>
+								</div>							
+							</section>
+							<section class="col-md-6 col-sm-6 col-lg-6">
+								<div>
+									<label for="all_bing_searches" class="pointer radio-inline option-text"><input type="radio" id="all_bing_searches" name="searchType" class="chrometana_advanced_setting">Apply to all Bing Searches</label>
+									<div class="helper-text">
+										<p>Redirect all searches sent to bing (including Cortana)</p>
+									</div>
+									<label for="exclude_settings_app" id="exclude_settings_app" name="searchType" class="option-text pointer radio-inline"><input type="radio" class="chrometana_advanced_setting">Apply Only to Cortana Searches</label>
+									<div class="helper-text">
+										<p>Only redirect searches that come from Cortana</p>
+									</div>
+								</div>
+							</section>
+							<section class="pull-left col-md-12 col-sm-12 col-lg-12">
+								<h3>Custom Search Engine</h3>
+								<div class="space-bottom">
+									<label class="pointer"><input type="checkbox" name="useCustomSearch" id="useCustomSearch" />Use a Custom Search Engine</label>
+								</div>
+
+								<div id="custom_engine_settings">
+										<input id="custom_engine" class="form-control pull-right" placeholder="http://www.ask.com/web?q=">
+									<div class="pull-right">
+										<button class="btn btn-default" id="custom_engine_update">Update</button>
+									</div>
+								</div>
+							</section>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>	
 		<script src="../js/options.js"></script>
 	</body>
 </html>

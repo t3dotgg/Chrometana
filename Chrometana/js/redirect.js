@@ -1,5 +1,9 @@
 // Fallback when Chrome is not already running
-chrome.runtime.sendMessage({"action": "convertURL", "url": location.href},
-    function (response) {
-      	location.href = response;
-    });
+var url = location.href;
+chrome.runtime.sendMessage({"action": "convertURL", "url": url},
+  function (response) {
+    if(response != url){
+      location.href = response;
+    }
+  }
+);
