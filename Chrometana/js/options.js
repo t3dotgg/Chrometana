@@ -5,6 +5,7 @@ var custom_engine_settings = document.getElementById('custom_engine_settings');
 var selectorList = document.getElementsByClassName('selector');
 var all_bing_searches = document.getElementById('all_bing_searches');
 var search_exclusions = document.getElementById('search_exclusions');
+var google_read_back = document.getElementById('google_read_back');
 if (getURLVariable("newinstall") == "yes"){
   var installadvice = document.getElementById('installadvice');
   addClass(installadvice, 'visible');
@@ -64,6 +65,7 @@ function restore_options() {
     custom_engine: '',
     enable_open_website: false,
     all_bing_searches: false,
+    google_read_back:true,
     exclude_settings_app: true
   }, function(items) {
     updateDisplay(items);

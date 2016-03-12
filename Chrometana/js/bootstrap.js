@@ -1,6 +1,7 @@
 var custom_engine;
 var storageChange;
 var enable_open_website;
+var google_read_back;
 var all_bing_searches;
 var exclude_settings_app;
 function convertURL(url){
@@ -28,9 +29,6 @@ function convertURL(url){
       return "http://" + match[5];
     }
   }
-  if(storageChange == "Google.com"){
-    return "https://www.google.com/search?q=" + uri;
-  }
   if(storageChange == "DuckDuckGo.com"){
     return "https://www.duckduckgo.com?q=" + uri;
   }
@@ -39,6 +37,9 @@ function convertURL(url){
   }
   if(storageChange == "Custom"){
     return custom_engine + uri;
+  }
+  if(google_read_back === true){
+    uri += "&gs_ivs=1";
   }
   return "https://www.google.com/search?q=" + uri;
 }
@@ -61,9 +62,10 @@ function getKeyValue(dictionary,key){
     return "";
 }
 
-chrome.storage.sync.get(['search_engine','custom_engine','enable_open_website','all_bing_searches','exclude_settings_app'], function (obj) {
+chrome.storage.sync.get(['search_engine','custom_engine','enable_open_website','google_read_back','all_bing_searches','exclude_settings_app'], function (obj) {
   storageChange = obj.search_engine;
   enable_open_website = obj.enable_open_website;
+  google_read_back = obj.google_read_back;
   all_bing_searches = obj.all_bing_searches;
   exclude_settings_app = obj.exclude_settings_app;
   if(storageChange == "Custom"){
@@ -82,6 +84,9 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
   }
   if(typeof changes.enable_open_website !== "undefined"){
     enable_open_website = changes.enable_open_website.newValue;
+  }
+  if(typeof changes.google_read_back !== "undefined"){
+    google_read_back = changes.google_read_back.newValue;
   }
   if(typeof changes.all_bing_searches !== "undefined"){
     all_bing_searches = changes.all_bing_searches.newValue;
