@@ -1,3 +1,4 @@
+"use strict";
 var custom_engine;
 var storageChange;
 var enable_open_website;
@@ -71,7 +72,7 @@ chrome.storage.sync.get(['search_engine','custom_engine','enable_open_website','
   }
 });
 
-chrome.storage.onChanged.addListener(function(changes, namespace) {  
+chrome.storage.onChanged.addListener(function(changes/*, namespace*/) {  
   if(typeof changes.search_engine !== "undefined"){
     storageChange = changes.search_engine.newValue;
   }

@@ -1,9 +1,10 @@
+"use strict";
 var defaultSE = "Google.com";
 var advanced_settings = document.getElementsByClassName('chrometana_advanced_setting');
 var useCustomSearch = document.getElementById('useCustomSearch');
 var custom_engine_settings = document.getElementById('custom_engine_settings');
 var selectorList = document.getElementsByClassName('selector');
-var all_bing_searches = document.getElementById('all_bing_searches');
+//var all_bing_searches = document.getElementById('all_bing_searches');
 if (getURLVariable("newinstall") == "yes"){
   var installadvice = document.getElementById('installadvice');
   addClass(installadvice, 'visible');
@@ -14,8 +15,8 @@ var optionCaller = function() {
 };
 
 var handleMouseover = function() {
-  selectedElements = document.getElementsByClassName('hovering');
-  for (i = 0; i <  selectedElements.length; i++) {
+  var selectedElements = document.getElementsByClassName('hovering');
+  for (var i = 0; i <  selectedElements.length; i++) {
     removeClass(selectedElements[i], 'hovering');
   }
   var selected = document.getElementsByClassName('selected')[0];
@@ -76,7 +77,7 @@ function restore_options() {
 }
 
 function updateDisplay(items){
-  for (i = 0; i <  selectorList.length; i++) {
+  for (var i = 0; i <  selectorList.length; i++) {
     if (selectorList[i].getAttribute('value') == items.search_engine) {
       addClass(selectorList[i], 'selected');
       addClass(selectorList[i], 'hovering');
@@ -104,7 +105,7 @@ function updateDisplay(items){
 }
 
 function updateCheckBoxes(items){
-  for (i = 0; i <  advanced_settings.length; i++) {
+  for (var i = 0; i <  advanced_settings.length; i++) {
     var id = advanced_settings[i].getAttribute("id");
     if(id in items){
       if(items[id]===true){
@@ -114,7 +115,7 @@ function updateCheckBoxes(items){
         document.getElementById(id).checked = false;
       }
     }
-    else if (id != null){
+    else if (id !== null){
       document.getElementById(id).checked = false;
     }
   }
@@ -158,7 +159,7 @@ String.prototype.contains = function(text) {
 // Add Event Listeners
 document.addEventListener('DOMContentLoaded', restore_options);
 
-for (i = 0; i <  selectorList.length; i++) {
+for (var i = 0; i <  selectorList.length; i++) {
   selectorList[i].addEventListener('click', optionCaller,false);
   selectorList[i].addEventListener('mouseover', handleMouseover, false);
   selectorList[i].addEventListener('mouseleave', handleMouseout, false);
@@ -168,7 +169,7 @@ useCustomSearch.addEventListener('click', function() {
   updateCustomSearchView();
 });
 
-for (i = 0; i <  advanced_settings.length; i++) {
+for (var i = 0; i <  advanced_settings.length; i++) {
   advanced_settings[i].addEventListener('click', advancedSettingsCaller, false);
 }
 
