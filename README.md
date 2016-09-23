@@ -8,6 +8,8 @@ Chrometana
 
 [Link to the Chrometana blog](http://Chrometana.Theo.li)
 
+[Link to RCOS, the Rensselaer Center for Open Source, for making this project possible](https://rcos.io)
+
 BROKEN UNTIL FURTHER NOTICE
 ------------
 [Recent changes](https://blogs.windows.com/windowsexperience/2016/04/28/delivering-personalized-search-experiences-in-windows-10-through-cortana/) to Windows 10 prevent Cortana from opening any browser other than Edge. Due to such, Chrometana will not be able to work.
