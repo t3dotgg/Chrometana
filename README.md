@@ -8,7 +8,7 @@ Chrometana
 
 [Link to the Chrometana blog](http://Chrometana.Theo.li)
 
-[Link to RCOS, the Rensselaer Center for Open Source, for making this project possible](https://rcos.io)
+[Link to RCOS, the Rensselaer Center for Open Source](https://rcos.io)
 
 BROKEN UNTIL FURTHER NOTICE
 ------------
