@@ -102,3 +102,5 @@ Lead by [Theo Browne](http://www.theo.li)
 Original development team [Theo Browne](http://www.theo.li), [Claire Pitman](https://github.com/ClairePitman), and [Maayan Kline](https://github.com/mok8)
 
 Current maintainers [Theo Browne](http://www.theo.li), [Courtney Tambling](http://courtneytambling.com/), and [Kyle Ladd](https://github.com/kyleladd)
+
+Logo designed by Preston Locke
