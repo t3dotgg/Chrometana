@@ -33,7 +33,6 @@
   };
 
   var advancedSettingsCaller = function() {
-    var id = this.id;
     var value;
     if(this.getAttribute("type") === "checkbox" || this.getAttribute("type") === "radio"){
       if(this.checked){
