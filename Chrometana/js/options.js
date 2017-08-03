@@ -35,7 +35,6 @@
   var advancedSettingsCaller = function() {
     var id = this.id;
     var value;
-    console.log(id);
     if(this.getAttribute("type") === "checkbox" || this.getAttribute("type") === "radio"){
       if(this.checked){
         value = true;
@@ -110,7 +109,7 @@
       var id = advanced_settings[i].getAttribute("id");
       if(id in items){
         if(items[id] === true){
-          document.getElementById(id).defaultValue = true;
+          document.getElementById(id).checked = true;
         }
         else{
           document.getElementById(id).checked = false;
@@ -146,11 +145,15 @@
   }
 
   function addClass(element, classNameToAdd) {
-    element.classList.add(classNameToAdd);
+    if(typeof element!=="undefined"){
+      element.classList.add(classNameToAdd);
+    }
   }
 
   function removeClass(element, classNameToRemove) {
-    element.classList.remove(classNameToRemove);
+    if(typeof element!=="undefined"){
+      element.classList.remove(classNameToRemove);
+    }
   }
 
   // Add Event Listeners
