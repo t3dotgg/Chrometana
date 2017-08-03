@@ -96,7 +96,7 @@
   chrome.webRequest.onBeforeRequest.addListener(function(details) {
     var newurl = convertURL(details.url);
     if(newurl !== details.url){
-      return { redirectUrl: convertURL(details.url)};
+      return { redirectUrl: newurl};
     }
   }, {urls: ["*://*.bing.com/search*"]}, ["blocking"]);
 
