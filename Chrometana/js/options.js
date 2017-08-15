@@ -166,6 +166,9 @@
 
   useCustomSearch.addEventListener('click', function() {
     updateCustomSearchView();
+    if(!this.checked){
+      document.getElementById('custom_engine_update').click();
+    }
   });
 
   for (var i = 0; i <  advanced_settings.length; i++) {
