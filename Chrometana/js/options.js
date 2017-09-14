@@ -16,12 +16,11 @@
   if (getURLVariable("update") === "yes"){
       chrome.storage.sync.get(['all_bing_searches'], function (all_bing_searches){
         console.log(all_bing_searches);
-        if(all_bing_searches['all_bing_searches'] != null) {
+        if(all_bing_searches.all_bing_searches !== null) {
           console.log("already set");
         } else {
           // Set all bing searches to redirect by default (Google policy "works by default" workaround)
           save_options('all_bing_searches', true);
-          console.log("just set");
         }
       });
   }
