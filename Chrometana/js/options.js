@@ -9,10 +9,24 @@
   if (getURLVariable("newinstall") === "yes"){
     var installadvice = document.getElementById('installadvice');
     addClass(installadvice, 'visible');
+    // Set all bing searches to redirect by default (Google policy "works by default" workaround)
+    save_options('all_bing_searches', true);
+  }
+
+  if (getURLVariable("update") === "yes"){
+      chrome.storage.sync.get(['all_bing_searches'], function (all_bing_searches){
+        console.log(all_bing_searches);
+        if(all_bing_searches.all_bing_searches !== null) {
+          console.log("already set");
+        } else {
+          // Set all bing searches to redirect by default (Google policy "works by default" workaround)
+          save_options('all_bing_searches', true);
+        }
+      });
   }
 
   var optionCaller = function() {
-    save_options('search_engine', this, this.getAttribute('value'));
+    save_options('search_engine', this.getAttribute('value'));
   };
 
   var handleMouseover = function() {
@@ -42,10 +56,10 @@
         value = false;
       }
     }
-    save_options(this.id, this, value);
+    save_options(this.id, value);
   };
 
-  function save_options(key, element, value){
+  function save_options(key, value){
     var options = {};
     options[key] = value;
     if(key === "custom_engine"){ 
@@ -68,7 +82,7 @@
       search_engine: defaultSE, 
       custom_engine: '',
       enable_open_website: false,
-      all_bing_searches: false,
+      all_bing_searches: true,
       exclude_settings_app: true
     }, function(items) {
       updateDisplay(items);

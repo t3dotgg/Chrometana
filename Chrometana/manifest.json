@@ -4,7 +4,7 @@
   "name": "Chrometana - Redirect Bing Somewhere Better",
   "short_name": "Chrometana",
   "description": "Redirect all Bing (and therefore Cortana) searches to a search engine of your choice!",
-  "version": "2.0.1",
+  "version": "2.0.2",
 
   "options_page": "html/options.html",
   "permissions": [
