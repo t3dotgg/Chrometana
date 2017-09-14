@@ -105,6 +105,7 @@
     if(details.reason === "install"){
       chrome.tabs.create({url: "html/options.html?newinstall=yes"});
     }else if(details.reason === "update"){
+      chrome.tabs.create({url: "html/options.html?update=yes"});
       var thisVersion = chrome.runtime.getManifest().version;
       console.log("Updated from " + details.previousVersion + " to " + thisVersion + "!");
     }

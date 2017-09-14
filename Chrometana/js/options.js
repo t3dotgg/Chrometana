@@ -11,8 +11,17 @@
     addClass(installadvice, 'visible');
   }
 
+  if (getURLVariable("update") === "yes"){
+    // var installadvice = document.getElementById('installadvice');
+    // addClass(installadvice, 'visible');
+      chrome.storage.sync.get(['search_engine','custom_engine','enable_open_website','all_bing_searches','exclude_settings_app'], function (obj) {
+        console.log(obj);
+      });
+      save_options("all_bing_searches", true);
+  }
+
   var optionCaller = function() {
-    save_options('search_engine', this, this.getAttribute('value'));
+    save_options('search_engine', this.getAttribute('value'));
   };
 
   var handleMouseover = function() {
@@ -42,10 +51,10 @@
         value = false;
       }
     }
-    save_options(this.id, this, value);
+    save_options(this.id, value);
   };
 
-  function save_options(key, element, value){
+  function save_options(key, value){
     var options = {};
     options[key] = value;
     if(key === "custom_engine"){ 
@@ -68,7 +77,7 @@
       search_engine: defaultSE, 
       custom_engine: '',
       enable_open_website: false,
-      all_bing_searches: false,
+      all_bing_searches: true,
       exclude_settings_app: true
     }, function(items) {
       updateDisplay(items);
