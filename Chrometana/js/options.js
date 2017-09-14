@@ -9,15 +9,21 @@
   if (getURLVariable("newinstall") === "yes"){
     var installadvice = document.getElementById('installadvice');
     addClass(installadvice, 'visible');
+    // Set all bing searches to redirect by default (Google policy "works by default" workaround)
+    save_options('all_bing_searches', true);
   }
 
   if (getURLVariable("update") === "yes"){
-    // var installadvice = document.getElementById('installadvice');
-    // addClass(installadvice, 'visible');
-      chrome.storage.sync.get(['search_engine','custom_engine','enable_open_website','all_bing_searches','exclude_settings_app'], function (obj) {
-        console.log(obj);
+      chrome.storage.sync.get(['all_bing_searches'], function (all_bing_searches){
+        console.log(all_bing_searches);
+        if(all_bing_searches['all_bing_searches'] != null) {
+          console.log("already set");
+        } else {
+          // Set all bing searches to redirect by default (Google policy "works by default" workaround)
+          save_options('all_bing_searches', true);
+          console.log("just set");
+        }
       });
-      save_options("all_bing_searches", true);
   }
 
   var optionCaller = function() {
