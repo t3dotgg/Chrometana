@@ -2,7 +2,7 @@ body {
     background-color: #FFFFFF;
     color: #fff;
     font-family: 'Raleway',Tahoma,Verdana,Arial,sans-serif;
-
+	cursor: default;
 }
 
 .content {
