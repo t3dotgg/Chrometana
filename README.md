@@ -5,16 +5,11 @@ Chrometana
 [![Build Status](https://travis-ci.org/TheoBr/Chrometana.svg?branch=master)](https://travis-ci.org/TheoBr/Chrometana)
 
 [Link to install on Chrome Web Store](https://chrome.google.com/webstore/detail/kaicbfmipfpfpjmlbpejaoaflfdnabnc)
+(Microsoft Edge link coming soon, for now just install through the Chrome store)
 
 [Link to the Chrometana blog](http://Chrometana.Theo.li)
 
 [Link to RCOS, the Rensselaer Center for Open Source](https://rcos.io)
-
-BROKEN UNTIL FURTHER NOTICE
-------------
-[Recent changes](https://blogs.windows.com/windowsexperience/2016/04/28/delivering-personalized-search-experiences-in-windows-10-through-cortana/) to Windows 10 prevent Cortana from opening any browser other than Edge. Due to such, Chrometana will not be able to work.
-
-[Blog post here if you would like to read more: http://chrometana.theo.li/2016/04/cortana-browser-choice-revoked-windows/](http://chrometana.theo.li/2016/04/cortana-browser-choice-revoked-windows/)
 
 INTRODUCTION
 ------------
