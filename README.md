@@ -2,14 +2,14 @@
 
 ![Logo](images/logo-128.png)
 
-[Link to install on Chrome Web Store](https://chrome.google.com/webstore/detail/kaicbfmipfpfpjmlbpejaoaflfdnabnc)
-(Microsoft Edge link coming soon, for now just install through the Chrome store)
-
-[Link to the Chrometana blog](http://Chrometana.Theo.li)
-
 Cortana always goes to Bing. I don't like Bing. This lets you redirect Cortana to other places.
 
 Open to contributions, just file a PR!
+
+[Chrome Web Store](https://chrome.google.com/webstore/detail/kaicbfmipfpfpjmlbpejaoaflfdnabnc)
+(Edge Store soon, use this for now)
+
+[Chrometana blog](http://Chrometana.Theo.li)
 
 ## Changelog
 
