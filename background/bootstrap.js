@@ -7,9 +7,6 @@
   var cortana_only;
   var exclude_settings_app;
   function convertURL(url) {
-    console.log("converting url");
-    console.log("Storage", window.localStorage.getItem("test-storage"));
-    console.log("Storage 2", window.localStorage.getItem("key"));
     var querystringparams = getUrlVars(url);
     var source = getKeyValue(querystringparams, "form");
     if (cortana_only === true) {
@@ -28,11 +25,11 @@
 
     url = url.replace(/%20/g, "+");
     var uri = /\?q\=([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*)($|(\&))/.exec(
-      url
+      url,
     )[1];
     if (enable_open_website === true) {
       var match = /^((go\+to\+)|(open\+)|())([0-9a-zA-Z-._~:\/?#[\]@!$'()*+,;=%]*\.[a-z]+)/i.exec(
-        uri
+        uri,
       );
       if (match) {
         return "http://" + match[5];
@@ -70,6 +67,20 @@
     return "";
   }
 
+  function setDefaults() {
+    chrome.storage.sync.set(
+      {
+        use_custom_engine: false,
+        search_engine: "Google.com",
+        custom_engine: "",
+        enable_open_website: true,
+        cortana_only: false,
+        exclude_settings_app: true,
+      },
+      () => {},
+    );
+  }
+
   chrome.storage.sync.get(
     [
       "use_custom_engine",
@@ -77,7 +88,7 @@
       "custom_engine",
       "enable_open_website",
       "cortana_only",
-      "exclude_settings_app"
+      "exclude_settings_app",
     ],
     function(obj) {
       use_custom_engine = obj.use_custom_engine;
@@ -86,10 +97,14 @@
       cortana_only = obj.cortana_only;
       exclude_settings_app = obj.exclude_settings_app;
       custom_engine = obj.custom_engine;
-    }
+      console.log("Fetched values", obj);
+      if (obj.use_custom_engine === undefined) {
+        setDefaults();
+      }
+    },
   );
 
-  chrome.storage.onChanged.addListener(function(changes /*, namespace*/) {
+  chrome.storage.onChanged.addListener(function(changes) {
     if (typeof changes.search_engine !== "undefined") {
       storageChange = changes.search_engine.newValue;
     }
@@ -118,22 +133,12 @@
       }
     },
     { urls: ["*://*.bing.com/search*"] },
-    ["blocking"]
+    ["blocking"],
   );
 
-  // Redirect to welcome.html on install
-  chrome.runtime.onInstalled.addListener(function(details) {
-    if (details.reason === "install") {
-      // chrome.tabs.create({ url: "options.html?newinstall=yes" });
-      // chrome.browserAction.setPopup("options.html");
-    } else if (details.reason === "update") {
-      // chrome.tabs.create({ url: "options.html?update=yes" });
-      // chrome.browserAction.setPopup("options.html");
-    }
-  });
   // Fallback when Chrome is not already running
   chrome.runtime.onMessage.addListener(onMessage);
-  function onMessage(request, sender, callback) {
+  function onMessage(request, callback) {
     if (request.action === "convertURL") {
       callback(convertURL(request.url));
     }
