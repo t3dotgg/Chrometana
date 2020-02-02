@@ -3,6 +3,7 @@
 ![Logo](Chrometana/images/logo-128.png)
 
 [Link to install on Chrome Web Store](https://chrome.google.com/webstore/detail/kaicbfmipfpfpjmlbpejaoaflfdnabnc)
+(Microsoft Edge link coming soon, for now just install through the Chrome store)
 
 [Link to the Chrometana blog](http://Chrometana.Theo.li)
 
