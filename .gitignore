@@ -3,9 +3,9 @@ node_modules/
 
 # Build
 dist/
-Chrometana.crx
-Chrometana.pem
-Chrometana.zip
+*.crx
+*.pem
+*.zip
 
 # OS X stuff
 *.DS_Store

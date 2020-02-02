@@ -1,12 +1,12 @@
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
-    popup: "./src/popup.jsx"
+    popup: "./src/popup.jsx",
   },
   devtool: "source-map",
   output: {
     filename: "[name].js",
-    path: __dirname + "/dist"
+    path: __dirname + "/dist",
   },
   module: {
     rules: [
@@ -18,17 +18,22 @@ module.exports = {
           options: {
             presets: ["@babel/preset-env"],
             plugins: [["@babel/plugin-transform-react-jsx", { pragma: "h" }]],
-            sourceMap: true
-          }
-        }
+            sourceMap: true,
+          },
+        },
       },
       {
         test: /\.scss$/i,
-        use: ["style-loader", "css-loader", "resolve-url-loader", "sass-loader"]
-      }
-    ]
+        use: [
+          "style-loader",
+          "css-loader",
+          "resolve-url-loader",
+          "sass-loader",
+        ],
+      },
+    ],
   },
   resolve: {
-    extensions: [".js", ".jsx"]
-  }
+    extensions: [".js", ".jsx"],
+  },
 };
