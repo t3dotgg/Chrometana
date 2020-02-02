@@ -128,7 +128,7 @@ npm install
 
 Created and maintained by [Theo Browne](http://www.t3.gg)
 
-Previous contributors include: [Claire Pitman](https://github.com/ClairePitman), [Gray Tambling](https://github.com/the-graytest), and [Kyle Ladd](https://github.com/kyleladd), and [Maayan Kline](https://github.com/mok8)
+Previous contributors include: [Claire Pitman](https://github.com/ClairePitman), [Gray Tambling](https://github.com/the-graytest), [Kyle Ladd](https://github.com/kyleladd), and [Maayan Kline](https://github.com/mok8)
 
 Logo designed by [Preston Locke](https://github.com/Preston12321)
 
