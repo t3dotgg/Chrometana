@@ -7,8 +7,6 @@
 
 [Link to the Chrometana blog](http://Chrometana.Theo.li)
 
-[Blog post here if you would like to read more: http://chrometana.theo.li/2016/04/cortana-browser-choice-revoked-windows/](http://chrometana.theo.li/2016/04/cortana-browser-choice-revoked-windows/)
-
 ## INTRODUCTION
 
 Cortana always goes to Bing. I don't like Bing. This lets you redirect Cortana to other places.
