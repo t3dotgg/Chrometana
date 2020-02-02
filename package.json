@@ -2,11 +2,29 @@
   "name": "Chrometana",
   "description": "Redirect Bing Somewhere Better http://Chrometana.Theo.li",
   "author": "Theo Browne",
-  "version": "2.0.2",
-  "devDependencies": {
-    "jshint": "^2.6.0"
-  },
+  "version": "3.0.0",
+  "main": "index.js",
   "scripts": {
+    "build": "webpack && npm run copy:dist",
+    "copy:dist": "cp ./src/options.html manifest.json ./dist && cp -r ./background ./dist && cp -r ./images ./dist",
     "test": "jshint --exclude ./node_modules ."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.5.5",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "jshint": "^2.6.0",
+    "node-sass": "^4.12.0",
+    "resolve-url-loader": "^3.1.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "preact": "^10.2.1"
   }
 }

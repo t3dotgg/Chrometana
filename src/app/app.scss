@@ -1,0 +1,47 @@
+#app-root {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  height: 10rem;
+  width: 20rem;
+}
+
+.search-select-popout {
+  display: flex;
+}
+
+.search-option {
+  width: 6rem;
+  transform: scale(0.8);
+  filter: grayscale(100%);
+  padding-top: 1rem;
+}
+
+.search-option--selected {
+  transform: none;
+  filter: none;
+}
+
+.additional-settings {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.pure-button {
+  font-family: inherit;
+  font-size: 100%;
+  padding: 0.5em 1em;
+  color: rgba(0, 0, 0, 0.8);
+  border: none rgba(0, 0, 0, 0);
+  background-color: #e6e6e6;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
