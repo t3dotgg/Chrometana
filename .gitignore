@@ -1,6 +1,11 @@
-Chrometana.zip
 # Dependencies
 node_modules/
+
+# Build
+dist/
+*.crx
+*.pem
+*.zip
 
 # OS X stuff
 *.DS_Store
