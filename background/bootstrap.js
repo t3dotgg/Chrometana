@@ -138,7 +138,7 @@
 
   // Fallback when Chrome is not already running
   chrome.runtime.onMessage.addListener(onMessage);
-  function onMessage(request, callback) {
+  function onMessage(request, sender, callback) {
     if (request.action === "convertURL") {
       callback(convertURL(request.url));
     }
